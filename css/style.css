@@ -340,6 +340,11 @@ section    { padding: 5rem 0; }
   font-size: .82rem;
   border: 1px solid rgba(255,255,255,.25);
 }
+.hero-badges span:first-child {
+  background: rgba(200,151,58,.35);
+  border-color: rgba(200,151,58,.7);
+  font-weight: 700;
+}
 
 .hero-actions {
   display: flex;
