@@ -175,6 +175,35 @@ section    { padding: 5rem 0; }
 
 .btn-full { width: 100%; justify-content: center; }
 
+.btn-whatsapp {
+  background: #25D366;
+  color: var(--c-white);
+  border-color: #25D366;
+  font-size: 1rem;
+}
+.btn-whatsapp:hover {
+  background: #1DAA54;
+  border-color: #1DAA54;
+  transform: translateY(-2px);
+  box-shadow: var(--s-md);
+}
+
+.contact-divider {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin: 1.25rem 0 .25rem;
+  color: var(--c-gray);
+  font-size: .8rem;
+}
+.contact-divider::before,
+.contact-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--c-beige-dk);
+}
+
 /* ============================================================
    NAVIGATION
    ============================================================ */
