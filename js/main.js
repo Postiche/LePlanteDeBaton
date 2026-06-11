@@ -134,8 +134,7 @@ contactForm.addEventListener('submit', e => {
   const tel     = data.get('telephone') || '';
   const message = data.get('message') || '';
 
-  /* ✏️ Remplacez VOTRE_EMAIL@example.com par votre adresse e-mail réelle */
-  const to      = 'VOTRE_EMAIL@example.com';
+  const to      = 'leplantedebaton1550@gmail.com';
   const subject = encodeURIComponent('Contact — Le Planté de Bâton');
   const body    = encodeURIComponent(
     `Nom : ${nom}\nEmail : ${email}${tel ? '\nTél : ' + tel : ''}\n\nMessage :\n${message}`
