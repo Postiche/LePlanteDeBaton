@@ -268,10 +268,9 @@ section    { padding: 5rem 0; }
   display: flex;
   align-items: center;
   justify-content: center;
-  /* ✏️ Remplacez cette URL par une belle photo de votre appartement ou de la station */
-  background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80');
+  background-image: url('../images/vue-balcon.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: center 20%;
   background-attachment: fixed;
   overflow: hidden;
 }
@@ -420,6 +419,37 @@ section    { padding: 5rem 0; }
 .logement-text p { margin-bottom: 1rem; }
 .logement-text strong { color: var(--c-primary); }
 
+/* Encart Vue */
+.vue-callout {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: linear-gradient(135deg, rgba(107,62,38,.06), rgba(200,151,58,.1));
+  border: 1.5px solid rgba(200,151,58,.4);
+  border-left: 4px solid var(--c-secondary);
+  border-radius: var(--r-md);
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0 0;
+}
+.vue-callout-icon {
+  font-size: 1.6rem;
+  color: var(--c-secondary);
+  flex-shrink: 0;
+  margin-top: .1rem;
+}
+.vue-callout strong {
+  display: block;
+  font-family: var(--f-head);
+  font-size: 1rem;
+  color: var(--c-primary);
+  margin-bottom: .35rem;
+}
+.vue-callout p {
+  font-size: .88rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
 .logement-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -511,6 +541,23 @@ section    { padding: 5rem 0; }
 }
 .galerie-item:hover .galerie-overlay           { background: rgba(42,26,8,.4); }
 .galerie-item:hover .galerie-overlay i         { opacity: 1; transform: scale(1); }
+
+/* Badge galerie (Vue / Face aux pistes) */
+.galerie-badge {
+  position: absolute;
+  bottom: .9rem;
+  left: .9rem;
+  background: rgba(200,151,58,.92);
+  color: var(--c-white);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: .3rem .8rem;
+  border-radius: 50px;
+  pointer-events: none;
+  z-index: 2;
+}
 
 .galerie-cta { text-align: center; margin-top: 2rem; }
 
