@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Le Planté de Bâton — Appartement de montagne dans les Alpes françaises. Location vacances pour skieurs et randonneurs. Réservez sur Airbnb.">
+    <meta property="og:title" content="Le Planté de Bâton | Appartement de Montagne dans les Alpes">
+    <meta property="og:description" content="Un nid douillet au cœur des Alpes, entre pistes enneigées et sentiers estivaux. Jusqu'à 6 personnes.">
+    <meta property="og:type" content="website">
+    <title>Le Planté de Bâton | Appartement de Montagne dans les Alpes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ═══════════════════════════════════════════
+         NAVIGATION
+    ═══════════════════════════════════════════ -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#accueil" class="nav-logo">Le Planté de Bâton</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#logement">Le logement</a></li>
+                <li><a href="#galerie">Photos</a></li>
+                <li><a href="#equipements">Équipements</a></li>
+                <li><a href="#activites">Activités</a></li>
+                <li><a href="#reservation" class="nav-cta">Réserver</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════════ -->
+    <section id="accueil" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="hero-pre">Votre retraite alpine</p>
+            <h1 class="hero-title">Le Planté<br>de Bâton</h1>
+            <p class="hero-subtitle">Un appartement de montagne chaleureux au cœur des Alpes,<br>entre pistes enneigées et sentiers estivaux.</p>
+            <div class="hero-badges">
+                <span><i class="fas fa-users"></i> 6 personnes</span>
+                <span><i class="fas fa-bed"></i> 3 chambres</span>
+                <span><i class="fas fa-mountain"></i> Vue montagne</span>
+                <span><i class="fas fa-person-skiing"></i> Ski au pied</span>
+            </div>
+            <div class="hero-actions">
+                <a href="#reservation" class="btn btn-primary">Vérifier les disponibilités</a>
+                <a href="#logement" class="btn btn-secondary">Découvrir</a>
+            </div>
+        </div>
+        <div class="hero-scroll-hint">
+            <span>Défiler</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         HIGHLIGHTS
+    ═══════════════════════════════════════════ -->
+    <section class="highlights">
+        <div class="container">
+            <div class="highlights-grid">
+                <div class="highlight-item reveal">
+                    <div class="highlight-icon"><i class="fas fa-star"></i></div>
+                    <h3>5 étoiles</h3>
+                    <p>Évaluation des voyageurs Airbnb</p>
+                </div>
+                <div class="highlight-item reveal">
+                    <div class="highlight-icon"><i class="fas fa-person-skiing"></i></div>
+                    <h3>Ski au pied</h3>
+                    <p>Accès direct aux pistes depuis la résidence</p>
+                </div>
+                <div class="highlight-item reveal">
+                    <div class="highlight-icon"><i class="fas fa-fire"></i></div>
+                    <h3>Cosy & chaleureux</h3>
+                    <p>Décoration montagnarde authentique et confortable</p>
+                </div>
+                <div class="highlight-item reveal">
+                    <div class="highlight-icon"><i class="fas fa-sun"></i></div>
+                    <h3>Été comme hiver</h3>
+                    <p>Randonnées, VTT, ski, raquettes… pour toutes les saisons</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         LE LOGEMENT
+    ═══════════════════════════════════════════ -->
+    <section id="logement" class="logement">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Le logement</span>
+                <h2>Votre home away from home</h2>
+                <p>Un nid douillet niché dans les Alpes, aménagé avec soin pour vous offrir tout le confort d'un séjour inoubliable.</p>
+            </div>
+            <div class="logement-grid">
+                <div class="logement-text reveal">
+                    <p>Bienvenue au <strong>Planté de Bâton</strong>, un appartement de montagne au caractère authentique, idéalement situé pour profiter de tout ce que les Alpes ont à offrir, été comme hiver.</p>
+                    <p>L'appartement lumineux s'articule autour d'un grand séjour ouvert sur la cuisine équipée, avec une vue imprenable sur les sommets. Le soir, retrouvez-vous autour du coin repas ou sur la terrasse pour admirer le coucher de soleil sur les montagnes.</p>
+                    <p>Trois chambres confortables accueillent jusqu'à 6 voyageurs dans une atmosphère chaleureuse mêlant bois naturel et couleurs de la montagne.</p>
+                    <!-- ✏️ Mettez à jour les chiffres ci-dessous avec les vraies données de votre appartement -->
+                    <div class="logement-stats">
+                        <div class="stat">
+                            <strong>6</strong>
+                            <span>voyageurs</span>
+                        </div>
+                        <div class="stat">
+                            <strong>3</strong>
+                            <span>chambres</span>
+                        </div>
+                        <div class="stat">
+                            <strong>2</strong>
+                            <span>salles de bain</span>
+                        </div>
+                        <div class="stat">
+                            <strong>80</strong>
+                            <span>m²</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="logement-image reveal">
+                    <!-- ✏️ Remplacez src par une vraie photo de votre appartement -->
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80"
+                         alt="Vue panoramique sur les Alpes depuis le logement"
+                         loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         GALERIE
+    ═══════════════════════════════════════════ -->
+    <section id="galerie" class="galerie">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Galerie</span>
+                <h2>Découvrez le logement en images</h2>
+                <p>Cliquez sur une photo pour l'agrandir</p>
+            </div>
+            <!-- ✏️ Remplacez les images ci-dessous par vos vraies photos -->
+            <div class="galerie-grid reveal">
+                <div class="galerie-item galerie-main" data-index="0">
+                    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&q=80" alt="Vue panoramique sur les montagnes" loading="lazy">
+                    <div class="galerie-overlay"><i class="fas fa-expand"></i></div>
+                </div>
+                <div class="galerie-item" data-index="1">
+                    <img src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=800&q=80" alt="Paysage alpin enneigé" loading="lazy">
+                    <div class="galerie-overlay"><i class="fas fa-expand"></i></div>
+                </div>
+                <div class="galerie-item" data-index="2">
+                    <img src="https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?w=800&q=80" alt="Salon chaleureux" loading="lazy">
+                    <div class="galerie-overlay"><i class="fas fa-expand"></i></div>
+                </div>
+                <div class="galerie-item" data-index="3">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Intérieur cosy" loading="lazy">
+                    <div class="galerie-overlay"><i class="fas fa-expand"></i></div>
+                </div>
+                <div class="galerie-item" data-index="4">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80" alt="Vue depuis la terrasse en été" loading="lazy">
+                    <div class="galerie-overlay"><i class="fas fa-expand"></i></div>
+                </div>
+                <div class="galerie-item" data-index="5">
+                    <img src="https://images.unsplash.com/photo-1551882547-ff40c599fb58?w=800&q=80" alt="Les sommets à proximité" loading="lazy">
+                    <div class="galerie-overlay"><i class="fas fa-expand"></i></div>
+                </div>
+            </div>
+            <div class="galerie-cta reveal">
+                <a href="https://www.airbnb.fr/rooms/1260906762212370216" target="_blank" rel="noopener" class="btn btn-outline">
+                    <i class="fab fa-airbnb"></i> Voir toutes les photos sur Airbnb
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Agrandissement photo">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Fermer"><i class="fas fa-times"></i></button>
+        <button class="lightbox-prev" id="lightboxPrev" aria-label="Photo précédente"><i class="fas fa-chevron-left"></i></button>
+        <button class="lightbox-next" id="lightboxNext" aria-label="Photo suivante"><i class="fas fa-chevron-right"></i></button>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightboxImg">
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         ÉQUIPEMENTS
+    ═══════════════════════════════════════════ -->
+    <section id="equipements" class="equipements">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Équipements</span>
+                <h2>Tout le confort pour un séjour parfait</h2>
+            </div>
+            <div class="equipements-grid">
+                <div class="equip-category reveal">
+                    <h3><i class="fas fa-house"></i> Espaces de vie</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Grand séjour lumineux</li>
+                        <li><i class="fas fa-check"></i> Terrasse avec vue montagne</li>
+                        <li><i class="fas fa-check"></i> Coin repas pour 6 personnes</li>
+                        <li><i class="fas fa-check"></i> Poêle / cheminée</li>
+                        <li><i class="fas fa-check"></i> Local skis &amp; équipements</li>
+                    </ul>
+                </div>
+                <div class="equip-category reveal">
+                    <h3><i class="fas fa-utensils"></i> Cuisine</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Cuisine entièrement équipée</li>
+                        <li><i class="fas fa-check"></i> Réfrigérateur &amp; congélateur</li>
+                        <li><i class="fas fa-check"></i> Lave-vaisselle</li>
+                        <li><i class="fas fa-check"></i> Four &amp; micro-ondes</li>
+                        <li><i class="fas fa-check"></i> Machine à café &amp; bouilloire</li>
+                    </ul>
+                </div>
+                <div class="equip-category reveal">
+                    <h3><i class="fas fa-wifi"></i> Connectivité &amp; confort</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Wi-Fi haut débit</li>
+                        <li><i class="fas fa-check"></i> Télévision grand écran</li>
+                        <li><i class="fas fa-check"></i> Chauffage central</li>
+                        <li><i class="fas fa-check"></i> Linge de maison fourni</li>
+                        <li><i class="fas fa-check"></i> Sèche-cheveux</li>
+                    </ul>
+                </div>
+                <div class="equip-category reveal">
+                    <h3><i class="fas fa-car"></i> Praticité</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Parking gratuit</li>
+                        <li><i class="fas fa-check"></i> Machine à laver</li>
+                        <li><i class="fas fa-check"></i> Sèche-linge</li>
+                        <li><i class="fas fa-check"></i> Fer &amp; table à repasser</li>
+                        <li><i class="fas fa-check"></i> Coffre-fort</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         ACTIVITÉS
+    ═══════════════════════════════════════════ -->
+    <section id="activites" class="activites">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Activités</span>
+                <h2>Le paradis des quatre saisons</h2>
+                <p>Que vous soyez amoureux de neige ou de verdure, les Alpes vous offrent un terrain de jeu exceptionnel.</p>
+            </div>
+            <div class="activites-tabs reveal">
+                <button class="tab-btn active" data-tab="hiver">
+                    <i class="fas fa-snowflake"></i> Hiver
+                </button>
+                <button class="tab-btn" data-tab="ete">
+                    <i class="fas fa-sun"></i> Été
+                </button>
+            </div>
+            <div class="tab-content active" id="hiver">
+                <div class="activites-grid">
+                    <div class="activite-card">
+                        <div class="activite-icon">⛷️</div>
+                        <h4>Ski alpin</h4>
+                        <p>Pistes de tous niveaux accessibles directement depuis la résidence.</p>
+                    </div>
+                    <div class="activite-card">
+                        <div class="activite-icon">🏂</div>
+                        <h4>Snowboard</h4>
+                        <p>Snowparks et pistes variées pour riders de tous niveaux.</p>
+                    </div>
+                    <div class="activite-card">
+                        <div class="activite-icon">🎿</div>
+                        <h4>Ski de fond</h4>
+                        <p>Des dizaines de kilomètres de pistes nordiques à travers forêts et alpages.</p>
+                    </div>
+                    <div class="activite-card">
+                        <div class="activite-icon">🧊</div>
+                        <h4>Patinoire</h4>
+                        <p>Patinoire en plein air au village, idéale pour les familles.</p>
+                    </div>
+                    <div class="activite-card">
+                        <div class="activite-icon">🏔️</div>
+                        <h4>Raquettes</h4>
+                        <p>Partez à la découverte des paysages enneigés sur les sentiers balisés.</p>
+                    </div>
+                    <div class="activite-card">
+                        <div class="activite-icon">🍷</div>
+                        <h4>Après-ski</h4>
+                        <p>Restaurants, bars d'altitude et terrasses ensoleillées pour se ressourcer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content" id="ete">
+                <div class="activites-grid">
+                    <div class="activite-card">
+                        <div class="activite-icon">🥾</div>
+                        <h4>Randonnée</h4>
+                        <p>Des centaines de kilomètres de sentiers balisés avec des vues époustouflantes.</p>
+                    </div>
+                    <div class="activite-card">
+                        <div class="activite-icon">🚵</div>
+                        <h4>VTT &amp; vélo</h4>
+                        <p>Trails techniques et descentes vertigineuses pour les amateurs de vélo.</p>
+                    </div>
+                    <div class="activite-card">
+                        <div class="activite-icon">🪂</div>
+                        <h4>Parapente</h4>
+                        <p>Volez au-dessus des Alpes pour une expérience unique et inoubliable.</p>
+                    </div>
+                    <div class="activite-card">
+                        <div class="activite-icon">🎣</div>
+                        <h4>Pêche</h4>
+                        <p>Lacs et rivières poissonneuses à découvrir dans un cadre somptueux.</p>
+                    </div>
+                    <div class="activite-card">
+                        <div class="activite-icon">🏊</div>
+                        <h4>Baignade</h4>
+                        <p>Lacs de montagne aux eaux cristallines pour vous rafraîchir.</p>
+                    </div>
+                    <div class="activite-card">
+                        <div class="activite-icon">🌿</div>
+                        <h4>Via ferrata</h4>
+                        <p>Progressez sur les parois rocheuses avec des équipements sécurisés.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         RÉSERVATION
+    ═══════════════════════════════════════════ -->
+    <section id="reservation" class="reservation">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Réservation</span>
+                <h2>Planifiez votre séjour</h2>
+                <p>Consultez les disponibilités et réservez directement sur Airbnb.</p>
+            </div>
+            <div class="reservation-grid">
+                <div class="reservation-airbnb reveal">
+                    <div class="airbnb-card">
+                        <div class="airbnb-header">
+                            <i class="fab fa-airbnb airbnb-logo"></i>
+                            <div>
+                                <h3>Réserver sur Airbnb</h3>
+                                <div class="airbnb-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>5,0 · Superhost</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Réservez en toute sécurité sur la plateforme Airbnb. Paiement sécurisé, annulation flexible disponible selon les périodes.</p>
+                        <div class="airbnb-features">
+                            <span><i class="fas fa-shield-halved"></i> Paiement sécurisé</span>
+                            <span><i class="fas fa-rotate-left"></i> Annulation flexible</span>
+                            <span><i class="fas fa-headset"></i> Support 24/7</span>
+                        </div>
+                        <a href="https://www.airbnb.fr/rooms/1260906762212370216"
+                           target="_blank" rel="noopener"
+                           class="btn btn-airbnb btn-full">
+                            <i class="fab fa-airbnb"></i> Voir les disponibilités sur Airbnb
+                        </a>
+                    </div>
+                </div>
+                <div class="reservation-contact reveal">
+                    <div class="contact-card">
+                        <h3>Une question ? Contactez-moi</h3>
+                        <p>Je réponds généralement dans la journée.</p>
+                        <form class="contact-form" id="contactForm" novalidate>
+                            <div class="form-group">
+                                <input type="text" name="nom" placeholder="Votre nom" required autocomplete="name">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Votre e-mail" required autocomplete="email">
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" name="telephone" placeholder="Téléphone (optionnel)" autocomplete="tel">
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" placeholder="Votre message, vos dates souhaitées…" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full">
+                                <i class="fas fa-paper-plane"></i> Envoyer le message
+                            </button>
+                            <div class="form-success" id="formSuccess" hidden>
+                                <i class="fas fa-circle-check"></i> Message envoyé — à très bientôt !
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         ACCÈS
+    ═══════════════════════════════════════════ -->
+    <section class="acces">
+        <div class="container">
+            <div class="acces-grid">
+                <div class="acces-text reveal">
+                    <span class="section-label">Comment venir</span>
+                    <h2>Accès &amp; localisation</h2>
+                    <p>Situé au cœur des Alpes françaises, Le Planté de Bâton est facilement accessible en voiture, en train ou en navette depuis les grandes villes.</p>
+                    <div class="acces-list">
+                        <div class="acces-item">
+                            <i class="fas fa-car"></i>
+                            <div>
+                                <strong>En voiture</strong>
+                                <p>Autoroute jusqu'à la station, parking gratuit inclus</p>
+                            </div>
+                        </div>
+                        <div class="acces-item">
+                            <i class="fas fa-train"></i>
+                            <div>
+                                <strong>En train</strong>
+                                <p>Gare la plus proche avec navettes régulières vers la station</p>
+                            </div>
+                        </div>
+                        <div class="acces-item">
+                            <i class="fas fa-plane"></i>
+                            <div>
+                                <strong>En avion</strong>
+                                <p>Aéroport de Genève ou Grenoble, transfert disponible</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="acces-note">
+                        <i class="fas fa-circle-info"></i>
+                        L'adresse exacte et les instructions d'accès sont transmises après confirmation de la réservation.
+                    </p>
+                </div>
+                <div class="acces-map reveal">
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-location-dot"></i>
+                        <p>Carte disponible après réservation</p>
+                        <a href="https://www.airbnb.fr/rooms/1260906762212370216"
+                           target="_blank" rel="noopener"
+                           class="btn btn-outline">
+                            Voir la localisation sur Airbnb
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         FOOTER
+    ═══════════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Le Planté de Bâton</h3>
+                    <p>Votre appartement de montagne dans les Alpes françaises. Disponible toute l'année.</p>
+                    <div class="footer-social">
+                        <a href="https://www.airbnb.fr/rooms/1260906762212370216"
+                           target="_blank" rel="noopener" aria-label="Page Airbnb">
+                            <i class="fab fa-airbnb"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#logement">Le logement</a></li>
+                        <li><a href="#galerie">Photos</a></li>
+                        <li><a href="#equipements">Équipements</a></li>
+                        <li><a href="#activites">Activités</a></li>
+                        <li><a href="#reservation">Réserver</a></li>
+                    </ul>
+                </div>
+                <div class="footer-info">
+                    <h4>Informations</h4>
+                    <ul>
+                        <li><i class="fas fa-location-dot"></i> Alpes françaises</li>
+                        <li><i class="fas fa-users"></i> Jusqu'à 6 personnes</li>
+                        <li><i class="fas fa-calendar-days"></i> Disponible toute l'année</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Le Planté de Bâton — Tous droits réservés</p>
+                <a href="https://www.airbnb.fr/rooms/1260906762212370216" target="_blank" rel="noopener">
+                    <i class="fab fa-airbnb"></i> Réserver sur Airbnb
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
