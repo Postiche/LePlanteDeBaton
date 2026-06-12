@@ -895,6 +895,215 @@ section    { padding: 5rem 0; }
 .map-placeholder p   { font-size: .88rem; color: rgba(255,255,255,.35); }
 
 /* ============================================================
+   AVIS
+   ============================================================ */
+
+.avis { background: var(--c-beige); }
+
+.avis-global {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.avis-score {
+  font-family: var(--f-head);
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--c-primary);
+  line-height: 1;
+}
+
+.avis-stars-lg { display: flex; gap: 4px; margin-bottom: .4rem; }
+.avis-stars-lg i { font-size: 1.2rem; color: #FF5A5F; }
+
+.avis-global p { font-size: .88rem; color: var(--c-mid); }
+.avis-global a { color: #FF5A5F; font-weight: 700; }
+.avis-global a:hover { text-decoration: underline; }
+
+.avis-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.avis-card {
+  background: var(--c-white);
+  border-radius: var(--r-lg);
+  padding: 1.6rem;
+  box-shadow: var(--s-sm);
+  transition: var(--t-fast);
+  display: flex;
+  flex-direction: column;
+}
+.avis-card:hover { transform: translateY(-3px); box-shadow: var(--s-md); }
+
+.avis-header {
+  display: flex;
+  align-items: center;
+  gap: .85rem;
+  margin-bottom: .9rem;
+}
+
+.avis-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid var(--c-beige);
+}
+
+.avis-author strong { display: block; font-size: .9rem; color: var(--c-dark); font-family: var(--f-body); }
+.avis-author span   { font-size: .75rem; color: var(--c-gray); }
+
+.avis-rating {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: .75rem;
+}
+.avis-stars { display: flex; gap: 2px; }
+.avis-stars i { font-size: .75rem; color: #FF5A5F; }
+.avis-rating span { font-size: .78rem; font-weight: 700; color: var(--c-mid); }
+
+.avis-text {
+  font-size: .85rem;
+  color: var(--c-mid);
+  line-height: 1.7;
+  font-style: italic;
+  flex: 1;
+}
+
+.avis-source {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  margin-top: 1rem;
+  font-size: .75rem;
+  color: rgba(255,90,95,.75);
+  font-weight: 700;
+}
+
+/* ============================================================
+   TARIFS
+   ============================================================ */
+
+.tarifs { background: var(--c-dark); }
+
+.tarifs .section-label { color: var(--c-secondary); }
+.tarifs .section-header h2 { color: var(--c-white); }
+.tarifs .section-header p  { color: rgba(255,255,255,.45); }
+
+.tarifs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.tarif-card {
+  position: relative;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: var(--r-xl);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: var(--t-fast);
+}
+.tarif-card:hover { transform: translateY(-5px); background: rgba(255,255,255,.1); }
+
+.tarif-card.tarif-peak {
+  background: rgba(200,151,58,.15);
+  border-color: rgba(200,151,58,.45);
+}
+
+.tarif-top-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--c-secondary);
+  color: var(--c-white);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  padding: .25rem .9rem;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+
+.tarif-saison {
+  font-size: .72rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--c-secondary);
+  margin-bottom: .6rem;
+  min-height: 2.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tarif-icon { font-size: 2.2rem; margin-bottom: .75rem; }
+
+.tarif-period {
+  font-size: .78rem;
+  color: rgba(255,255,255,.45);
+  margin-bottom: 1rem;
+  min-height: 1.8em;
+}
+
+.tarif-price {
+  font-family: var(--f-head);
+  font-size: 2.8rem;
+  color: var(--c-white);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+.tarif-price span { font-size: .9rem; opacity: .55; font-family: var(--f-body); }
+
+.tarif-desc { font-size: .82rem; color: rgba(255,255,255,.4); line-height: 1.6; }
+
+.tarifs-note {
+  text-align: center;
+  font-size: .82rem;
+  color: rgba(255,255,255,.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .4rem;
+}
+.tarifs-note i { color: var(--c-secondary); }
+
+.tarifs-cta { text-align: center; margin-top: 2rem; }
+
+/* ============================================================
+   CARTE GOOGLE MAPS
+   ============================================================ */
+
+.map-frame {
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  box-shadow: var(--s-lg);
+}
+
+.map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  margin-top: .9rem;
+  font-size: .82rem;
+  color: rgba(255,255,255,.45);
+  transition: var(--t-fast);
+}
+.map-link:hover { color: var(--c-secondary); }
+
+/* ============================================================
    FOOTER
    ============================================================ */
 
@@ -996,6 +1205,11 @@ section    { padding: 5rem 0; }
    RESPONSIVE — mobile (≤768px)
    ============================================================ */
 
+@media (max-width: 1024px) {
+  .tarifs-grid { grid-template-columns: repeat(2,1fr); }
+  .avis-grid   { grid-template-columns: repeat(2,1fr); }
+}
+
 @media (max-width: 768px) {
   /* Nav mobile */
   .nav-toggle { display: flex; }
@@ -1054,6 +1268,8 @@ section    { padding: 5rem 0; }
   .footer-grid      { grid-template-columns: 1fr; gap: 2rem; }
   .galerie-grid     { grid-template-columns: 1fr; }
   .galerie-main     { grid-column: span 1; aspect-ratio: 4/3; }
+  .tarifs-grid      { grid-template-columns: 1fr; }
+  .avis-grid        { grid-template-columns: 1fr; }
 
   .hero-actions     { flex-direction: column; align-items: stretch; }
   .btn              { width: 100%; justify-content: center; }
