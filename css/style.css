@@ -286,6 +286,29 @@ section    { padding: 6rem 0; }
 }
 .nav-cta:hover { background: var(--c-rouge-lt) !important; transform: translateY(-1px); }
 
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: .5rem;
+}
+.lang-btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.45);
+  color: rgba(255,255,255,.75);
+  font: 400 .72rem/1 var(--f-body);
+  letter-spacing: .04em;
+  padding: 4px 7px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background var(--t-fast), color var(--t-fast), border-color var(--t-fast);
+}
+.lang-btn:hover { background: rgba(255,255,255,.15); color: #fff; border-color: rgba(255,255,255,.7); }
+.lang-btn.active { background: rgba(255,255,255,.22); color: #fff; border-color: rgba(255,255,255,.8); font-weight: 600; }
+.navbar.scrolled .lang-btn { border-color: rgba(92,68,51,.4); color: var(--c-brun-md); }
+.navbar.scrolled .lang-btn:hover { background: var(--c-ivoire); color: var(--c-brun); border-color: var(--c-brun-lt); }
+.navbar.scrolled .lang-btn.active { background: var(--c-sable); color: var(--c-brun); border-color: var(--c-brun-md); }
+
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -316,7 +339,7 @@ section    { padding: 6rem 0; }
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: url('../images/vue-balcon.jpg') center/cover no-repeat;
+  background: url('../images/vue-station.jpg') center/cover no-repeat;
 }
 
 .hero-overlay {
