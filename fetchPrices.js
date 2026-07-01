@@ -1,0 +1,1 @@
+// Fonctions pour appeler les API financières en temps réel

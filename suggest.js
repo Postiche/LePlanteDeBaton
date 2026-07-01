@@ -1,0 +1,1 @@
+// API pour générer les idées IA chaque matin
