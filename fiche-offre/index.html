@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Fiche Offre — BNP Paribas RE</title>
+<style>
+:root {
+  --bnp: #00965E;
+  --bnp-dk: #006B42;
+  --bnp-lt: #E8F5F0;
+  --grey: #F4F4F5;
+  --grey-bd: #D1D5DB;
+  --txt: #1A1A1A;
+  --txt-md: #4B5563;
+  --txt-lt: #9CA3AF;
+  --r: 10px;
+  --shadow: 0 2px 12px rgba(0,0,0,.10);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #F0F2F5;
+  color: var(--txt);
+  padding-bottom: 100px;
+}
+
+/* ── Header ── */
+.header {
+  background: var(--bnp);
+  color: #fff;
+  padding: 1rem 1.25rem .85rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,.18);
+}
+.header h1 { font-size: 1.05rem; font-weight: 700; letter-spacing: .01em; }
+.header p  { font-size: .75rem; opacity: .85; margin-top: .15rem; }
+.progress-bar { height: 3px; background: rgba(255,255,255,.3); margin-top: .75rem; border-radius: 99px; overflow: hidden; }
+.progress-fill { height: 100%; background: #fff; border-radius: 99px; transition: width .4s ease; width: 0%; }
+
+/* ── Sections ── */
+.section {
+  margin: 1rem .75rem .5rem;
+  background: #fff;
+  border-radius: var(--r);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.section-header {
+  background: var(--bnp-lt);
+  border-left: 4px solid var(--bnp);
+  padding: .7rem 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+.section-header h2 {
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--bnp-dk);
+}
+.section-header .chevron { font-size: .9rem; color: var(--bnp); transition: transform .25s; }
+.section-header.collapsed .chevron { transform: rotate(-90deg); }
+.section-body { padding: 1rem; display: flex; flex-direction: column; gap: .85rem; }
+.section-body.hidden { display: none; }
+
+/* ── Subsection ── */
+.subsection { border: 1px solid var(--grey-bd); border-radius: 8px; overflow: hidden; }
+.subsection-title {
+  background: var(--grey);
+  padding: .5rem .85rem;
+  font-size: .75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--txt-md);
+}
+.subsection-body { padding: .85rem; display: flex; flex-direction: column; gap: .75rem; }
+
+/* ── Fields ── */
+.field { display: flex; flex-direction: column; gap: .3rem; }
+.field label {
+  font-size: .75rem;
+  font-weight: 600;
+  color: var(--txt-md);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.field label .req { color: #e53e3e; margin-left: 2px; }
+
+input[type=text], input[type=email], input[type=tel], input[type=number],
+input[type=date], select, textarea {
+  width: 100%;
+  padding: .7rem .85rem;
+  border: 1.5px solid var(--grey-bd);
+  border-radius: 8px;
+  font-size: .95rem;
+  font-family: inherit;
+  color: var(--txt);
+  background: #FAFAFA;
+  transition: border-color .2s, box-shadow .2s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--bnp);
+  box-shadow: 0 0 0 3px rgba(0,150,94,.12);
+  background: #fff;
+}
+select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239CA3AF' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right .75rem center; padding-right: 2.5rem; }
+textarea { resize: vertical; min-height: 80px; }
+
+/* ── Row layout ── */
+.row { display: grid; gap: .6rem; }
+.row-2 { grid-template-columns: 1fr 1fr; }
+.row-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+/* ── Checkboxes ── */
+.checks { display: flex; flex-wrap: wrap; gap: .5rem; }
+.check-item {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  background: var(--grey);
+  border: 1.5px solid var(--grey-bd);
+  border-radius: 6px;
+  padding: .4rem .7rem;
+  cursor: pointer;
+  font-size: .85rem;
+  font-weight: 500;
+  color: var(--txt-md);
+  user-select: none;
+  transition: background .15s, border-color .15s, color .15s;
+}
+.check-item input[type=checkbox] { display: none; }
+.check-item.checked {
+  background: var(--bnp-lt);
+  border-color: var(--bnp);
+  color: var(--bnp-dk);
+  font-weight: 600;
+}
+
+/* ── Radio pills ── */
+.radios { display: flex; flex-wrap: wrap; gap: .5rem; }
+.radio-item {
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+  background: var(--grey);
+  border: 1.5px solid var(--grey-bd);
+  border-radius: 6px;
+  padding: .4rem .9rem;
+  cursor: pointer;
+  font-size: .85rem;
+  font-weight: 500;
+  color: var(--txt-md);
+  user-select: none;
+  transition: background .15s, border-color .15s, color .15s;
+}
+.radio-item input[type=radio] { display: none; }
+.radio-item.selected {
+  background: var(--bnp);
+  border-color: var(--bnp);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ── Stacking plan ── */
+.stack-table { width: 100%; border-collapse: collapse; font-size: .8rem; }
+.stack-table th {
+  background: var(--grey);
+  padding: .45rem .5rem;
+  text-align: left;
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--txt-md);
+  border-bottom: 1px solid var(--grey-bd);
+}
+.stack-table td { padding: .3rem .3rem; }
+.stack-table input[type=text] { padding: .4rem .5rem; font-size: .82rem; }
+.stack-type { font-size: .7rem; font-weight: 700; color: var(--txt-lt); text-align: center; vertical-align: middle; }
+.add-row-btn {
+  background: none;
+  border: 1.5px dashed var(--grey-bd);
+  color: var(--bnp);
+  font-size: .82rem;
+  font-weight: 600;
+  padding: .5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: .5rem;
+}
+
+/* ── Sticky footer ── */
+.sticky-footer {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: #fff;
+  border-top: 1px solid var(--grey-bd);
+  padding: .85rem 1rem;
+  display: flex;
+  gap: .6rem;
+  z-index: 200;
+  box-shadow: 0 -4px 16px rgba(0,0,0,.10);
+}
+.btn-send {
+  flex: 1;
+  background: var(--bnp);
+  color: #fff;
+  border: none;
+  border-radius: var(--r);
+  padding: .85rem 1rem;
+  font-size: .95rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  transition: background .2s;
+}
+.btn-send:hover { background: var(--bnp-dk); }
+.btn-copy {
+  background: var(--grey);
+  color: var(--txt-md);
+  border: 1.5px solid var(--grey-bd);
+  border-radius: var(--r);
+  padding: .85rem 1rem;
+  font-size: .85rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background .2s;
+}
+.btn-copy:hover { background: #E5E7EB; }
+
+/* ── Toast ── */
+.toast {
+  position: fixed;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: #1A1A1A;
+  color: #fff;
+  padding: .65rem 1.25rem;
+  border-radius: 8px;
+  font-size: .85rem;
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity .3s, transform .3s;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 300;
+}
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* ── Info box ── */
+.info-box {
+  background: var(--bnp-lt);
+  border: 1px solid rgba(0,150,94,.25);
+  border-radius: 8px;
+  padding: .65rem .85rem;
+  font-size: .8rem;
+  color: var(--bnp-dk);
+  display: flex;
+  gap: .5rem;
+  align-items: flex-start;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📋 Fiche Offre</h1>
+  <p>BNP Paribas Real Estate — Remplir &amp; envoyer à l'assistante</p>
+  <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+</div>
+
+<form id="mainForm" novalidate>
+
+<!-- ═══ S1 : IDENTIFICATION ═══ -->
+<div class="section">
+  <div class="section-header" onclick="toggleSection(this)">
+    <h2>1 · Identification de l'offre</h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="field">
+      <label>Négociateur <span class="req">*</span></label>
+      <input type="text" name="nego" placeholder="Prénom NOM" required>
+    </div>
+    <div class="field">
+      <label>Adresse du site <span class="req">*</span></label>
+      <input type="text" name="adresse" placeholder="N° et nom de rue" required>
+    </div>
+    <div class="row row-2">
+      <div class="field">
+        <label>CP <span class="req">*</span></label>
+        <input type="text" name="cp" placeholder="75000" required inputmode="numeric">
+      </div>
+      <div class="field">
+        <label>Ville <span class="req">*</span></label>
+        <input type="text" name="ville" placeholder="Paris" required>
+      </div>
+    </div>
+    <div class="field">
+      <label>Statut de l'offre</label>
+      <div class="radios" id="statut-radios">
+        <label class="radio-item"><input type="radio" name="statut" value="En cours"> En cours</label>
+        <label class="radio-item"><input type="radio" name="statut" value="Confidentielle"> Confidentielle</label>
+        <label class="radio-item"><input type="radio" name="statut" value="Potentielle"> Potentielle</label>
+      </div>
+    </div>
+    <div class="row row-2">
+      <div class="field">
+        <label>Disponibilité</label>
+        <input type="text" name="dispo" placeholder="Ex: Immédiate / 3 mois">
+      </div>
+      <div class="field">
+        <label>Origine de l'offre</label>
+        <select name="origine">
+          <option value="">— Choisir —</option>
+          <option>Prospection terrain</option>
+          <option>Réseau</option>
+          <option>Appel entrant</option>
+          <option>Confrère</option>
+          <option>Propriétaire</option>
+          <option>Autre</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ S2 : PROPRIÉTAIRE ═══ -->
+<div class="section">
+  <div class="section-header collapsed" onclick="toggleSection(this)">
+    <h2>2 · Propriétaire</h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="section-body hidden">
+    <div class="info-box">ℹ️ À renseigner également dans le CRM avant création d'offre.</div>
+    <div class="field">
+      <label>Société <span class="req">*</span></label>
+      <input type="text" name="prop_societe" placeholder="Nom de la société" required>
+    </div>
+    <div class="field">
+      <label>SIRET</label>
+      <input type="text" name="prop_siret" placeholder="14 chiffres" inputmode="numeric" maxlength="17">
+    </div>
+    <div class="row row-2">
+      <div class="field">
+        <label>Contact</label>
+        <input type="text" name="prop_contact" placeholder="Prénom NOM">
+      </div>
+      <div class="field">
+        <label>Fonction</label>
+        <input type="text" name="prop_fonction" placeholder="Ex: Directeur">
+      </div>
+    </div>
+    <div class="row row-2">
+      <div class="field">
+        <label>Téléphone</label>
+        <input type="tel" name="prop_tel" placeholder="06 xx xx xx xx">
+      </div>
+      <div class="field">
+        <label>Email</label>
+        <input type="email" name="prop_mail" placeholder="contact@société.fr">
+      </div>
+    </div>
+    <div class="field">
+      <label>Divers</label>
+      <textarea name="prop_divers" placeholder="Remarques..."></textarea>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ S3 : MANDANT ═══ -->
+<div class="section">
+  <div class="section-header collapsed" onclick="toggleSection(this)">
+    <h2>3 · Mandant</h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="section-body hidden">
+    <div class="field">
+      <label>Société</label>
+      <input type="text" name="mand_societe" placeholder="Nom de la société">
+    </div>
+    <div class="field">
+      <label>SIRET</label>
+      <input type="text" name="mand_siret" placeholder="14 chiffres" inputmode="numeric" maxlength="17">
+    </div>
+    <div class="row row-2">
+      <div class="field">
+        <label>Contact</label>
+        <input type="text" name="mand_contact" placeholder="Prénom NOM">
+      </div>
+      <div class="field">
+        <label>Fonction</label>
+        <input type="text" name="mand_fonction" placeholder="Ex: Directeur">
+      </div>
+    </div>
+    <div class="row row-2">
+      <div class="field">
+        <label>Téléphone</label>
+        <input type="tel" name="mand_tel" placeholder="06 xx xx xx xx">
+      </div>
+      <div class="field">
+        <label>Email</label>
+        <input type="email" name="mand_mail" placeholder="contact@société.fr">
+      </div>
+    </div>
+    <div class="field">
+      <label>Divers</label>
+      <textarea name="mand_divers" placeholder="Remarques..."></textarea>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ S4 : INFORMATIONS GÉNÉRALES ═══ -->
+<div class="section">
+  <div class="section-header collapsed" onclick="toggleSection(this)">
+    <h2>4 · Informations générales</h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="section-body hidden">
+    <div class="field">
+      <label>Bâtiment indépendant</label>
+      <div class="radios">
+        <label class="radio-item"><input type="radio" name="bat_indep" value="Oui"> Oui</label>
+        <label class="radio-item"><input type="radio" name="bat_indep" value="Non"> Non</label>
+      </div>
+    </div>
+    <div class="field">
+      <label>Type de bien</label>
+      <div class="checks" id="type_bien">
+        <label class="check-item"><input type="checkbox" name="type_bien" value="Immeuble"> Immeuble</label>
+        <label class="check-item"><input type="checkbox" name="type_bien" value="Terrain"> Terrain</label>
+      </div>
+    </div>
+    <div class="field">
+      <label>Usage principal</label>
+      <div class="checks">
+        <label class="check-item"><input type="checkbox" name="usage" value="Activité"> Activité</label>
+        <label class="check-item"><input type="checkbox" name="usage" value="Bureaux"> Bureaux</label>
+        <label class="check-item"><input type="checkbox" name="usage" value="Logistique"> Logistique</label>
+      </div>
+    </div>
+    <div class="row row-2">
+      <div class="field">
+        <label>Spécificité</label>
+        <select name="specificite">
+          <option value="">— Choisir —</option>
+          <option>Mono-locataire</option>
+          <option>Multi-locataire</option>
+          <option>Clé en main</option>
+          <option>Parc d'activités</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Surface totale terrain (m²)</label>
+        <input type="number" name="surface_terrain" placeholder="0" inputmode="numeric">
+      </div>
+    </div>
+    <div class="field">
+      <label>Année de construction</label>
+      <input type="text" name="annee_construction" placeholder="Ex: 2005" inputmode="numeric" maxlength="4">
+    </div>
+    <div class="subsection">
+      <div class="subsection-title">Parking VL</div>
+      <div class="subsection-body">
+        <div class="row row-2">
+          <div class="field"><label>Extérieur</label><select name="parking_vl_ext"><option value="">—</option><option>Oui</option><option>Non</option></select></div>
+          <div class="field"><label>Quantité ext.</label><input type="number" name="parking_vl_ext_qte" placeholder="0" inputmode="numeric"></div>
+        </div>
+        <div class="row row-2">
+          <div class="field"><label>Intérieur</label><select name="parking_vl_int"><option value="">—</option><option>Oui</option><option>Non</option></select></div>
+          <div class="field"><label>Quantité int.</label><input type="number" name="parking_vl_int_qte" placeholder="0" inputmode="numeric"></div>
+        </div>
+      </div>
+    </div>
+    <div class="subsection">
+      <div class="subsection-title">Parking PL</div>
+      <div class="subsection-body">
+        <div class="row row-2">
+          <div class="field"><label>Extérieur</label><select name="parking_pl_ext"><option value="">—</option><option>Oui</option><option>Non</option></select></div>
+          <div class="field"><label>Quantité ext.</label><input type="number" name="parking_pl_ext_qte" placeholder="0" inputmode="numeric"></div>
+        </div>
+        <div class="row row-2">
+          <div class="field"><label>Intérieur</label><select name="parking_pl_int"><option value="">—</option><option>Oui</option><option>Non</option></select></div>
+          <div class="field"><label>Quantité int.</label><input type="number" name="parking_pl_int_qte" placeholder="0" inputmode="numeric"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ S5 : DESSERTES ═══ -->
+<div class="section">
+  <div class="section-header collapsed" onclick="toggleSection(this)">
+    <h2>5 · Dessertes</h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="section-body hidden">
+    <div class="field"><label>Dessertes routières</label><input type="text" name="desserte_routiere" placeholder="Ex: A6 sortie 12, D7..."></div>
+    <div class="row row-2">
+      <div class="field"><label>TER</label><select name="ter"><option value="">—</option><option>Oui</option><option>Non</option></select></div>
+      <div class="field"><label>Station TER</label><input type="text" name="ter_station" placeholder="Nom de la gare"></div>
+    </div>
+    <div class="row row-2">
+      <div class="field"><label>TRAM</label><select name="tram"><option value="">—</option><option>Oui</option><option>Non</option></select></div>
+      <div class="field"><label>Station TRAM</label><input type="text" name="tram_station" placeholder="Nom de la station"></div>
+    </div>
+    <div class="row row-2">
+      <div class="field"><label>RER</label><select name="rer"><option value="">—</option><option>Oui</option><option>Non</option></select></div>
+      <div class="field"><label>Station RER</label><input type="text" name="rer_station" placeholder="Nom de la station"></div>
+    </div>
+    <div class="row row-2">
+      <div class="field"><label>Gare SNCF</label><input type="text" name="gare_sncf" placeholder="Nom de la gare"></div>
+      <div class="field"><label>Aéroport</label><select name="aeroport"><option value="">—</option><option>Oui</option><option>Non</option></select></div>
+    </div>
+    <div class="field"><label>Bus — lignes</label><input type="text" name="bus" placeholder="Ex: Ligne 42, 56..."></div>
+    <div class="field"><label>Divers transports</label><input type="text" name="desserte_divers" placeholder="Autres précisions..."></div>
+  </div>
+</div>
+
+<!-- ═══ S6 : DESCRIPTIFS ═══ -->
+<div class="section">
+  <div class="section-header collapsed" onclick="toggleSection(this)">
+    <h2>6 · Descriptifs &amp; services</h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="section-body hidden">
+    <div class="field"><label>État des locaux</label><div class="radios"><label class="radio-item"><input type="radio" name="etat_locaux" value="État d'usage"> État d'usage</label><label class="radio-item"><input type="radio" name="etat_locaux" value="Neufs"> Neufs</label><label class="radio-item"><input type="radio" name="etat_locaux" value="Rénovés"> Rénovés</label></div></div>
+    <div class="field"><label>État de l'immeuble</label><div class="radios"><label class="radio-item"><input type="radio" name="etat_immeuble" value="État d'usage"> État d'usage</label><label class="radio-item"><input type="radio" name="etat_immeuble" value="Neufs"> Neufs</label><label class="radio-item"><input type="radio" name="etat_immeuble" value="Rénovés"> Rénovés</label></div></div>
+    <div class="field"><label>État du terrain</label><div class="checks"><label class="check-item"><input type="checkbox" name="etat_terrain" value="Bétonné"> Bétonné</label><label class="check-item"><input type="checkbox" name="etat_terrain" value="Compacté"> Compacté</label><label class="check-item"><input type="checkbox" name="etat_terrain" value="Goudronne"> Goudronné</label><label class="check-item"><input type="checkbox" name="etat_terrain" value="Mixte"> Mixte</label><label class="check-item"><input type="checkbox" name="etat_terrain" value="Voie lourde"> Voie lourde</label><label class="check-item"><input type="checkbox" name="etat_terrain" value="Terre végétale"> Terre végétale</label></div></div>
+    <div class="field"><label>Source chauffage</label><div class="checks"><label class="check-item"><input type="checkbox" name="chauffage" value="Gaz"> Gaz</label><label class="check-item"><input type="checkbox" name="chauffage" value="Électrique"> Électrique</label><label class="check-item"><input type="checkbox" name="chauffage" value="Géothermie"> Géothermie</label><label class="check-item"><input type="checkbox" name="chauffage" value="Photovoltaïque"> Photovoltaïque</label></div></div>
+    <div class="field"><label>Climatisation</label><div class="checks"><label class="check-item"><input type="checkbox" name="clim" value="Bureaux"> Bureaux</label><label class="check-item"><input type="checkbox" name="clim" value="Activité"> Activité</label></div></div>
+  </div>
+</div>
+
+<!-- ═══ S7 : PRESTATIONS BUREAU ═══ -->
+<div class="section">
+  <div class="section-header collapsed" onclick="toggleSection(this)">
+    <h2>7 · Prestations bureau</h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="section-body hidden">
+    <div class="field"><label>Divers</label><div class="checks"><label class="check-item"><input type="checkbox" name="bureau_divers" value="Hall d'accueil"> Hall d'accueil</label><label class="check-item"><input type="checkbox" name="bureau_divers" value="Faux plancher"> Faux plancher</label><label class="check-item"><input type="checkbox" name="bureau_divers" value="Faux plafond"> Faux plafond</label></div></div>
+    <div class="field"><label>Éclairage</label><div class="checks"><label class="check-item"><input type="checkbox" name="eclairage_bureau" value="LED"> LED</label><label class="check-item"><input type="checkbox" name="eclairage_bureau" value="Spots"> Spots</label><label class="check-item"><input type="checkbox" name="eclairage_bureau" value="Luminaires suspendus"> Suspendus</label><label class="check-item"><input type="checkbox" name="eclairage_bureau" value="Luminaires encastrés"> Encastrés</label></div></div>
+    <div class="field"><label>Sol</label><div class="checks"><label class="check-item"><input type="checkbox" name="sol_bureau" value="Carrelage"> Carrelage</label><label class="check-item"><input type="checkbox" name="sol_bureau" value="Moquette"> Moquette</label><label class="check-item"><input type="checkbox" name="sol_bureau" value="Parquet"> Parquet</label><label class="check-item"><input type="checkbox" name="sol_bureau" value="DLS Thermoplastiques"> DLS Thermoplastiques</label></div></div>
+    <div class="field"><label>Aménagement</label><div class="radios"><label class="radio-item"><input type="radio" name="amenagement" value="Cloisonés"> Cloisonés</label><label class="radio-item"><input type="radio" name="amenagement" value="Espaces ouverts"> Open space</label><label class="radio-item"><input type="radio" name="amenagement" value="Mixte"> Mixte</label></div></div>
+    <div class="field"><label>Autres prestations bureau</label><textarea name="bureau_autres" placeholder="Précisions..."></textarea></div>
+  </div>
+</div>
+
+<!-- ═══ S8 : STACKING PLAN ═══ -->
+<div class="section">
+  <div class="section-header collapsed" onclick="toggleSection(this)">
+    <h2>8 · Stacking plan</h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="section-body hidden">
+    <div class="info-box">📐 Plan masse à joindre séparément. Merci de votre parfaite précision.</div>
+    <div style="overflow-x:auto">
+      <table class="stack-table" id="stackTable">
+        <thead><tr><th>Lot / Bâtiment</th><th>Étage</th><th>Type</th><th>Surface (m²)</th></tr></thead>
+        <tbody id="stackBody">
+          <tr><td><input type="text" name="stack_lot[]" placeholder="Lot A"></td><td><input type="text" name="stack_etage[]" placeholder="RDC"></td><td class="stack-type">Activité</td><td><input type="number" name="stack_surface_act[]" placeholder="0" inputmode="numeric"></td></tr>
+          <tr><td></td><td></td><td class="stack-type">Bureaux</td><td><input type="number" name="stack_surface_bur[]" placeholder="0" inputmode="numeric"></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <button type="button" class="add-row-btn" onclick="addStackRow()">+ Ajouter un lot</button>
+  </div>
+</div>
+
+<!-- ═══ S9 : PRESTATIONS ACTIVITÉ/ENTREPÔT ═══ -->
+<div class="section">
+  <div class="section-header collapsed" onclick="toggleSection(this)">
+    <h2>9 · Prestations activité / entrepôt</h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="section-body hidden">
+    <div class="field"><label>Accessibilité véhicules</label><div class="checks"><label class="check-item"><input type="checkbox" name="acces_vehicules" value="Camionnettes"> Camionnettes</label><label class="check-item"><input type="checkbox" name="acces_vehicules" value="Moyens porteurs"> Moyens porteurs</label><label class="check-item"><input type="checkbox" name="acces_vehicules" value="Tous porteurs"> Tous porteurs</label></div></div>
+    <div class="field"><label>Charpente</label><div class="checks"><label class="check-item"><input type="checkbox" name="charpente" value="Béton"> Béton</label><label class="check-item"><input type="checkbox" name="charpente" value="Bois"> Bois</label><label class="check-item"><input type="checkbox" name="charpente" value="Métallique"> Métallique</label><label class="check-item"><input type="checkbox" name="charpente" value="Mixtes"> Mixtes</label></div></div>
+    <div class="field"><label>Couverture</label><div class="checks"><label class="check-item"><input type="checkbox" name="couverture" value="Ardoise"> Ardoise</label><label class="check-item"><input type="checkbox" name="couverture" value="Bac acier isolé"> Bac acier isolé</label><label class="check-item"><input type="checkbox" name="couverture" value="Bac acier non isolé"> Bac acier non isolé</label><label class="check-item"><input type="checkbox" name="couverture" value="Béton"> Béton</label><label class="check-item"><input type="checkbox" name="couverture" value="Sheds verrière"> Sheds / verrière</label><label class="check-item"><input type="checkbox" name="couverture" value="Zinc"> Zinc</label></div></div>
+    <div class="field"><label>Murs</label><div class="checks"><label class="check-item"><input type="checkbox" name="murs" value="Béton"> Béton</label><label class="check-item"><input type="checkbox" name="murs" value="Parpaing"> Parpaing</label><label class="check-item"><input type="checkbox" name="murs" value="Bardage db peau"> Bardage db peau</label><label class="check-item"><input type="checkbox" name="murs" value="Bardage simple peau"> Bardage simple peau</label></div></div>
+    <div class="field"><label>Sols entrepôt</label><div class="checks"><label class="check-item"><input type="checkbox" name="sols_entrepot" value="Béton"> Béton</label><label class="check-item"><input type="checkbox" name="sols_entrepot" value="Goudron"> Goudron</label><label class="check-item"><input type="checkbox" name="sols_entrepot" value="Résine"> Résine</label></div></div>
+    <div class="field"><label>Sécurité</label><div class="checks"><label class="check-item"><input type="checkbox" name="securite" value="Contrôle d'accès"> Contrôle d'accès</label><label class="check-item"><input type="checkbox" name="securite" value="Gardiennage"> Gardiennage</label><label class="check-item"><input type="checkbox" name="securite" value="PC Sécurité"> PC Sécurité</label><label class="check-item"><input type="checkbox" name="securite" value="Vidéo surveillance"> Vidéo surveillance</label></div></div>
+    <div class="field"><label>Locaux sociaux</label><div class="checks"><label class="check-item"><input type="checkbox" name="locaux_sociaux" value="Douches / Vestiaires"> Douches / Vestiaires</label><label class="check-item"><input type="checkbox" name="locaux_sociaux" value="Sanitaires"> Sanitaires</label></div></div>
+    <div class="field"><label>Puissance électrique</label><div class="radios"><label class="radio-item"><input type="radio" name="elec" value="Tarif bleu"> Bleu</label><label class="radio-item"><input type="radio" name="elec" value="Tarif jaune"> Jaune</label><label class="radio-item"><input type="radio" name="elec" value="Tarif vert"> Vert</label><label class="radio-item"><input type="radio" name="elec" value="À créer"> À créer</label></div></div>
+    <div class="field"><label>Portes à quai</label><div class="checks"><label class="check-item"><input type="checkbox" name="portes_quai" value="Buttoirs"> Buttoirs</label><label class="check-item"><input type="checkbox" name="portes_quai" value="Filants"> Filants</label><label class="check-item"><input type="checkbox" name="portes_quai" value="Niveleur hydraulique"> Niveleur hydraulique</label><label class="check-item"><input type="checkbox" name="portes_quai" value="Niveleur mécanique"> Niveleur mécanique</label><label class="check-item"><input type="checkbox" name="portes_quai" value="SAS d'étanchéité"> SAS d'étanchéité</label></div></div>
+    <div class="row row-3">
+      <div class="field"><label>Nb portes quai</label><input type="number" name="nb_portes_quai" placeholder="0" inputmode="numeric"></div>
+      <div class="field"><label>Nb portes plain-pied</label><input type="number" name="nb_portes_pp" placeholder="0" inputmode="numeric"></div>
+      <div class="field"><label>Largeur portes (m)</label><input type="text" name="largeur_portes" placeholder="Ex: 4.5"></div>
+    </div>
+    <div class="row row-3">
+      <div class="field"><label>Hauteur portes (m)</label><input type="text" name="hauteur_portes" placeholder="Ex: 5"></div>
+      <div class="field"><label>Hauteur libre (m)</label><input type="text" name="hauteur_libre" placeholder="Ex: 9"></div>
+      <div class="field"><label>Hauteur ss poutre (m)</label><input type="text" name="hauteur_poutre" placeholder="Ex: 8.5"></div>
+    </div>
+    <div class="row row-2">
+      <div class="field"><label>Charge sol RDC (T/m²)</label><input type="text" name="charge_rdc" placeholder="Ex: 5"></div>
+      <div class="field"><label>Charge sol R+1 (T/m²)</label><input type="text" name="charge_r1" placeholder="Ex: 2"></div>
+    </div>
+    <div class="field"><label>Équipements</label><div class="checks"><label class="check-item"><input type="checkbox" name="equip_entrepot" value="Racks"> Racks</label><label class="check-item"><input type="checkbox" name="equip_entrepot" value="Sprinklers"> Sprinklers</label><label class="check-item"><input type="checkbox" name="equip_entrepot" value="Monte-charge"> Monte-charge</label><label class="check-item"><input type="checkbox" name="equip_entrepot" value="RIA"> RIA</label><label class="check-item"><input type="checkbox" name="equip_entrepot" value="Aire de manœuvre"> Aire manœuvre</label><label class="check-item"><input type="checkbox" name="equip_entrepot" value="Aire stock. ext."> Stock. ext.</label><label class="check-item"><input type="checkbox" name="equip_entrepot" value="Zone de béquillage"> Béquillage</label><label class="check-item"><input type="checkbox" name="equip_entrepot" value="Pont roulant"> Pont roulant</label></div></div>
+    <div class="field"><label>Mezzanine</label><input type="text" name="mezzanine" placeholder="Surface, hauteur..."></div>
+    <div class="field"><label>Autres</label><textarea name="entrepot_autres" placeholder="Précisions supplémentaires..."></textarea></div>
+  </div>
+</div>
+
+<!-- ═══ S10 : CONDITIONS FINANCIÈRES ═══ -->
+<div class="section">
+  <div class="section-header collapsed" onclick="toggleSection(this)">
+    <h2>10 · Conditions financières</h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="section-body hidden">
+    <div class="field"><label>Type d'opération <span class="req">*</span></label><div class="radios"><label class="radio-item"><input type="radio" name="type_operation" value="Location" required> Location</label><label class="radio-item"><input type="radio" name="type_operation" value="Vente"> Vente</label></div></div>
+    <div id="bloc_location">
+      <div class="subsection">
+        <div class="subsection-title">Location — Conditions juridiques</div>
+        <div class="subsection-body">
+          <div class="row row-2">
+            <div class="field"><label>Type de bail</label><select name="type_bail"><option value="">— Choisir —</option><option>3/6/9</option><option>Bail précaire</option><option>Bail emphytéotique</option><option>Convention d'occupation</option></select></div>
+            <div class="field"><label>Régime fiscal</label><select name="regime_fiscal_loc"><option value="">—</option><option>HT</option><option>HC</option><option>HT HC</option></select></div>
+          </div>
+          <div class="row row-2">
+            <div class="field"><label>Dépôt de garantie</label><input type="text" name="depot_garantie" placeholder="Ex: 3 mois de loyer"></div>
+            <div class="field"><label>Indexation</label><select name="indexation"><option value="">—</option><option>ICC</option><option>ILC</option><option>ILAT</option><option>IRL</option></select></div>
+          </div>
+          <div class="row row-2">
+            <div class="field"><label>Break option</label><select name="break_option"><option value="">—</option><option>Oui</option><option>Non</option></select></div>
+            <div class="field"><label>Paiement honoraires</label><input type="text" name="honoraires_loc" placeholder="Ex: 1 mois de loyer HT"></div>
+          </div>
+          <div class="row row-2">
+            <div class="field"><label>Échéance bail</label><input type="date" name="echeance_bail"></div>
+            <div class="field"><label>Frais rédaction acte</label><input type="text" name="frais_acte" placeholder="Ex: à la charge du..."></div>
+          </div>
+        </div>
+      </div>
+      <div class="subsection" style="margin-top:.6rem">
+        <div class="subsection-title">Location — Loyers &amp; charges</div>
+        <div class="subsection-body">
+          <div class="row row-2">
+            <div class="field"><label>Loyer /m² Activité (€)</label><input type="number" name="loyer_m2_act" placeholder="0" inputmode="decimal"></div>
+            <div class="field"><label>Loyer /m² Bureaux (€)</label><input type="number" name="loyer_m2_bur" placeholder="0" inputmode="decimal"></div>
+          </div>
+          <div class="row row-2">
+            <div class="field"><label>Loyer annuel HT HC (€)</label><input type="number" name="loyer_annuel" placeholder="0" inputmode="decimal"></div>
+            <div class="field"><label>Charges /m² (€)</label><input type="number" name="charges_m2_loc" placeholder="0" inputmode="decimal"></div>
+          </div>
+          <div class="field"><label>Charges annuelles (€)</label><input type="number" name="charges_annuelles_loc" placeholder="0" inputmode="decimal"></div>
+          <div class="field"><label>Éléments compris dans les charges</label><textarea name="detail_charges_loc" placeholder="Ex: taxe foncière, entretien..."></textarea></div>
+        </div>
+      </div>
+    </div>
+    <div id="bloc_vente" style="display:none">
+      <div class="subsection">
+        <div class="subsection-title">Vente — Conditions juridiques</div>
+        <div class="subsection-body">
+          <div class="row row-2">
+            <div class="field"><label>Modalités de vente</label><select name="modalites_vente"><option value="">—</option><option>Vente directe</option><option>Appel d'offres</option><option>Cession parts sociales</option></select></div>
+            <div class="field"><label>Régime fiscal</label><select name="regime_fiscal_vte"><option value="">—</option><option>TVA</option><option>Droits enregistrement</option></select></div>
+          </div>
+          <div class="field"><label>Paiement honoraires</label><input type="text" name="honoraires_vte" placeholder="Ex: % du prix de vente"></div>
+        </div>
+      </div>
+      <div class="subsection" style="margin-top:.6rem">
+        <div class="subsection-title">Vente — Prix &amp; charges</div>
+        <div class="subsection-body">
+          <div class="row row-2">
+            <div class="field"><label>Prix /m² Activité (€)</label><input type="number" name="prix_m2_act" placeholder="0" inputmode="decimal"></div>
+            <div class="field"><label>Prix /m² Bureaux (€)</label><input type="number" name="prix_m2_bur" placeholder="0" inputmode="decimal"></div>
+          </div>
+          <div class="field"><label>Prix de vente global (€)</label><input type="number" name="prix_global" placeholder="0" inputmode="decimal"></div>
+          <div class="row row-2">
+            <div class="field"><label>Charges /m² (€)</label><input type="number" name="charges_m2_vte" placeholder="0" inputmode="decimal"></div>
+            <div class="field"><label>Charges annuelles (€)</label><input type="number" name="charges_annuelles_vte" placeholder="0" inputmode="decimal"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="subsection" style="margin-top:.6rem">
+      <div class="subsection-title">Impôts &amp; taxes</div>
+      <div class="subsection-body">
+        <div class="row row-2">
+          <div class="field"><label>Impôt foncier annuel (€)</label><input type="number" name="impot_foncier" placeholder="0" inputmode="decimal"></div>
+          <div class="field"><label>Impôt foncier /m²/an</label><input type="number" name="impot_foncier_m2" placeholder="0" inputmode="decimal"></div>
+        </div>
+        <div class="row row-2">
+          <div class="field"><label>À la charge du</label><select name="impot_charge"><option value="">—</option><option>Preneur</option><option>Bailleur</option><option>Partagé</option></select></div>
+          <div class="field"><label>Taxe OM /m²/an</label><input type="number" name="taxe_om" placeholder="0" inputmode="decimal"></div>
+        </div>
+        <div class="row row-2">
+          <div class="field"><label>Taxe bureaux /m²/an</label><input type="number" name="taxe_bureaux" placeholder="0" inputmode="decimal"></div>
+          <div class="field"><label>Taxe entrepôt /m²/an</label><input type="number" name="taxe_entrepot" placeholder="0" inputmode="decimal"></div>
+        </div>
+      </div>
+    </div>
+    <div class="field" style="margin-top:.6rem"><label>Disponibilité</label><div class="radios"><label class="radio-item"><input type="radio" name="dispo_type" value="Immédiate"> Immédiate</label><label class="radio-item"><input type="radio" name="dispo_type" value="Date précise"> Date précise</label><label class="radio-item"><input type="radio" name="dispo_type" value="Mois après accord"> Mois après accord</label></div></div>
+    <div class="field" id="dispo_date_field" style="display:none"><label>Date de disponibilité</label><input type="date" name="dispo_date"></div>
+    <div class="field" id="dispo_mois_field" style="display:none"><label>Nombre de mois après accord</label><input type="number" name="dispo_mois" placeholder="Ex: 6" inputmode="numeric"></div>
+  </div>
+</div>
+
+<!-- ═══ S11 : MANDAT ═══ -->
+<div class="section">
+  <div class="section-header collapsed" onclick="toggleSection(this)">
+    <h2>11 · Mandat</h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="section-body hidden">
+    <div class="field"><label>Type de mandat</label><div class="radios"><label class="radio-item"><input type="radio" name="type_mandat" value="Simple"> Simple</label><label class="radio-item"><input type="radio" name="type_mandat" value="Exclusif"> Exclusif</label><label class="radio-item"><input type="radio" name="type_mandat" value="Co-exclusif"> Co-exclusif</label></div></div>
+    <div class="row row-2">
+      <div class="field"><label>Rémunération offreur</label><input type="text" name="remun_offreur" placeholder="Ex: 15 %"></div>
+      <div class="field"><label>Rémunération preneur</label><input type="text" name="remun_preneur" placeholder="Ex: 15 %"></div>
+    </div>
+    <div class="field"><label>Confrère(s) co-exclusif</label><input type="text" name="confreres" placeholder="Noms des cabinets confrères"></div>
+    <div class="field"><label>Partage de rémunération</label><input type="text" name="partage_remun" placeholder="Ex: 50/50"></div>
+    <div class="field"><label>Incentive</label><input type="text" name="incentive" placeholder="Conditions particulières..."></div>
+    <div class="row row-2">
+      <div class="field"><label>Début du mandat</label><input type="date" name="debut_mandat"></div>
+      <div class="field"><label>Durée du mandat</label><input type="text" name="duree_mandat" placeholder="Ex: 12 mois"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ S12 : ACCROCHE ═══ -->
+<div class="section">
+  <div class="section-header collapsed" onclick="toggleSection(this)">
+    <h2>12 · Accroche &amp; argumentaire</h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="section-body hidden">
+    <div class="field"><label>Accroche commerciale</label><textarea name="accroche" placeholder="Phrase d'accroche courte et percutante..." rows="2"></textarea></div>
+    <div class="field"><label>Points clés (un par ligne)</label><textarea name="points_cles" placeholder="• Point 1&#10;• Point 2&#10;• Point 3" rows="4"></textarea></div>
+    <div class="field"><label>Argumentaire long</label><textarea name="argumentaire" placeholder="Description complète du bien, atouts commerciaux..." rows="5"></textarea></div>
+  </div>
+</div>
+
+<!-- ═══ S13 : PROCÉDURE DE VISITE ═══ -->
+<div class="section">
+  <div class="section-header collapsed" onclick="toggleSection(this)">
+    <h2>13 · Procédure de visite</h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="section-body hidden">
+    <div class="field"><label>Numéro de clé</label><input type="text" name="num_cle" placeholder="Ex: Clé 42 — armoire bureau"></div>
+    <div class="field"><label>Contact sur place</label><input type="text" name="contact_place" placeholder="Nom, tél du gardien / propriétaire"></div>
+    <div class="field"><label>Autres</label><textarea name="visite_autres" placeholder="Modalités d'accès..."></textarea></div>
+  </div>
+</div>
+
+<!-- ═══ S14 : ACTIONS MARKETING ═══ -->
+<div class="section">
+  <div class="section-header collapsed" onclick="toggleSection(this)">
+    <h2>14 · Actions marketing</h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="section-body hidden">
+    <div class="field"><label>Publication web</label><input type="text" name="pub_web" placeholder="Sites de diffusion souhaités"></div>
+    <div class="field"><label>Autorisation mail propriétaire</label><div class="radios"><label class="radio-item"><input type="radio" name="auth_mail_prop" value="Oui"> Oui</label><label class="radio-item"><input type="radio" name="auth_mail_prop" value="Non"> Non</label></div></div>
+    <div class="field"><label>Chemin accès photos</label><input type="text" name="chemin_photos" placeholder="Ex: SharePoint/Offres/2024/..."></div>
+    <div class="field"><label>Diffusion confrère</label><div class="radios"><label class="radio-item"><input type="radio" name="diffusion_confrere" value="Oui"> Oui</label><label class="radio-item"><input type="radio" name="diffusion_confrere" value="Non"> Non</label></div></div>
+    <div class="field"><label>Autres actions</label><textarea name="marketing_autres" placeholder="Panneau, mailing, réseaux sociaux..."></textarea></div>
+  </div>
+</div>
+
+</form>
+
+<div class="sticky-footer">
+  <button type="button" class="btn-copy" onclick="copyToClipboard()">📋 Copier</button>
+  <button type="button" class="btn-send" onclick="sendEmail()">✉️ Envoyer à Jennifer</button>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+function toggleSection(header) {
+  header.classList.toggle('collapsed');
+  header.nextElementSibling.classList.toggle('hidden');
+}
+
+document.addEventListener('change', function(e) {
+  const t = e.target;
+  if (t.type === 'radio') {
+    document.querySelectorAll(`input[type=radio][name="${t.name}"]`).forEach(r => r.closest('.radio-item').classList.remove('selected'));
+    t.closest('.radio-item').classList.add('selected');
+    if (t.name === 'type_operation') {
+      document.getElementById('bloc_location').style.display = t.value === 'Location' ? 'block' : 'none';
+      document.getElementById('bloc_vente').style.display = t.value === 'Vente' ? 'block' : 'none';
+    }
+    if (t.name === 'dispo_type') {
+      document.getElementById('dispo_date_field').style.display = t.value === 'Date précise' ? 'flex' : 'none';
+      document.getElementById('dispo_mois_field').style.display = t.value === 'Mois après accord' ? 'flex' : 'none';
+    }
+  }
+  if (t.type === 'checkbox') t.closest('.check-item').classList.toggle('checked', t.checked);
+  updateProgress();
+});
+
+function updateProgress() {
+  const required = document.querySelectorAll('[required]');
+  const filled = Array.from(required).filter(f => f.value.trim());
+  document.getElementById('progressFill').style.width = (required.length ? Math.round(filled.length / required.length * 100) : 0) + '%';
+}
+
+let stackCount = 1;
+function addStackRow() {
+  stackCount++;
+  const body = document.getElementById('stackBody');
+  const tr1 = document.createElement('tr');
+  tr1.innerHTML = `<td><input type="text" name="stack_lot[]" placeholder="Lot ${stackCount}"></td><td><input type="text" name="stack_etage[]" placeholder="RDC"></td><td class="stack-type">Activité</td><td><input type="number" name="stack_surface_act[]" placeholder="0" inputmode="numeric"></td>`;
+  const tr2 = document.createElement('tr');
+  tr2.innerHTML = '<td></td><td></td><td class="stack-type">Bureaux</td><td><input type="number" name="stack_surface_bur[]" placeholder="0" inputmode="numeric"></td>';
+  body.appendChild(tr1); body.appendChild(tr2);
+}
+
+function collectData() {
+  const f = document.getElementById('mainForm'), data = {};
+  f.querySelectorAll('input:not([type=checkbox]):not([type=radio]), select, textarea').forEach(el => { if (el.name && el.value.trim()) data[el.name] = el.value.trim(); });
+  f.querySelectorAll('input[type=radio]:checked').forEach(el => { data[el.name] = el.value; });
+  const cbGroups = {};
+  f.querySelectorAll('input[type=checkbox]:checked').forEach(el => { if (!cbGroups[el.name]) cbGroups[el.name] = []; cbGroups[el.name].push(el.value); });
+  Object.assign(data, cbGroups);
+  return data;
+}
+
+function formatBody(data) {
+  const v = (k, d='—') => { const x = data[k]; if (!x) return d; return Array.isArray(x) ? x.join(', ') : x; };
+  const stackRows = (() => {
+    const lots = [].concat(data['stack_lot[]'] || []), etages = [].concat(data['stack_etage[]'] || []), acts = [].concat(data['stack_surface_act[]'] || []), burs = [].concat(data['stack_surface_bur[]'] || []);
+    if (!lots.length) return '—';
+    return lots.map((l,i) => `  • ${l} (ét. ${etages[i]||'?'}) : Activité ${acts[i]||0} m² / Bureaux ${burs[i]||0} m²`).join('\n');
+  })();
+  const isVente = data['type_operation'] === 'Vente';
+  return `FICHE OFFRE — BNP PARIBAS REAL ESTATE\n${'='.repeat(50)}\nNégociateur : ${v('nego')} | Date : ${new Date().toLocaleDateString('fr-FR')}\n\n1. IDENTIFICATION\nAdresse : ${v('adresse')}, ${v('cp')} ${v('ville')}\nStatut : ${v('statut')} | Disponibilité : ${v('dispo')} | Origine : ${v('origine')}\n\n2. PROPRIÉTAIRE\nSociété : ${v('prop_societe')} | SIRET : ${v('prop_siret')}\nContact : ${v('prop_contact')} (${v('prop_fonction')}) | Tél : ${v('prop_tel')} | Mail : ${v('prop_mail')}\n${v('prop_divers') !== '—' ? 'Divers : ' + v('prop_divers') + '\n' : ''}\n3. MANDANT\nSociété : ${v('mand_societe')} | SIRET : ${v('mand_siret')}\nContact : ${v('mand_contact')} (${v('mand_fonction')}) | Tél : ${v('mand_tel')} | Mail : ${v('mand_mail')}\n${v('mand_divers') !== '—' ? 'Divers : ' + v('mand_divers') + '\n' : ''}\n4. INFORMATIONS GÉNÉRALES\nBâtiment indép. : ${v('bat_indep')} | Type : ${v('type_bien')} | Usage : ${v('usage')} | Spéc. : ${v('specificite')}\nSurface terrain : ${v('surface_terrain')} m² | Année : ${v('annee_construction')}\nParking VL : ext. ${v('parking_vl_ext')} (${v('parking_vl_ext_qte')}) | int. ${v('parking_vl_int')} (${v('parking_vl_int_qte')})\nParking PL : ext. ${v('parking_pl_ext')} (${v('parking_pl_ext_qte')}) | int. ${v('parking_pl_int')} (${v('parking_pl_int_qte')})\n\n5. DESSERTES\nRoutières : ${v('desserte_routiere')} | TER : ${v('ter')} — ${v('ter_station')} | TRAM : ${v('tram')} — ${v('tram_station')}\nRER : ${v('rer')} — ${v('rer_station')} | Gare : ${v('gare_sncf')} | Aéroport : ${v('aeroport')} | Bus : ${v('bus')}\n\n6. DESCRIPTIFS\nÉtat locaux : ${v('etat_locaux')} | Immeuble : ${v('etat_immeuble')} | Terrain : ${v('etat_terrain')}\nChauffage : ${v('chauffage')} | Clim : ${v('clim')}\n\n7. PRESTATIONS BUREAU\nDivers : ${v('bureau_divers')} | Éclairage : ${v('eclairage_bureau')} | Sol : ${v('sol_bureau')} | Aménag. : ${v('amenagement')}\n${v('bureau_autres') !== '—' ? 'Autres : ' + v('bureau_autres') + '\n' : ''}\n8. STACKING PLAN\n${stackRows}\n\n9. PRESTATIONS ACTIVITÉ / ENTREPÔT\nAccès : ${v('acces_vehicules')} | Charpente : ${v('charpente')} | Couverture : ${v('couverture')}\nMurs : ${v('murs')} | Sols : ${v('sols_entrepot')} | Sécurité : ${v('securite')} | Locaux sociaux : ${v('locaux_sociaux')}\nÉlec : ${v('elec')} | Portes quai : ${v('nb_portes_quai')} (${v('portes_quai')}) | Plain-pied : ${v('nb_portes_pp')}\nLarg. : ${v('largeur_portes')} m | Haut. : ${v('hauteur_portes')} m | H. libre : ${v('hauteur_libre')} m | H. poutre : ${v('hauteur_poutre')} m\nCharge RDC : ${v('charge_rdc')} T/m² | R+1 : ${v('charge_r1')} T/m² | Équip. : ${v('equip_entrepot')}\n${v('mezzanine') !== '—' ? 'Mezzanine : ' + v('mezzanine') + '\n' : ''}\n10. CONDITIONS FINANCIÈRES — ${v('type_operation').toUpperCase()}\n${isVente ? `Modalités : ${v('modalites_vente')} | Fiscal : ${v('regime_fiscal_vte')} | Honor. : ${v('honoraires_vte')}\nPrix /m² Act : ${v('prix_m2_act')} € | Bur : ${v('prix_m2_bur')} € | Global : ${v('prix_global')} €\nCharges /m² : ${v('charges_m2_vte')} € | Annuelles : ${v('charges_annuelles_vte')} €` : `Bail : ${v('type_bail')} | Fiscal : ${v('regime_fiscal_loc')} | Dépôt : ${v('depot_garantie')} | Index. : ${v('indexation')}\nBreak : ${v('break_option')} | Honor. : ${v('honoraires_loc')} | Échéance : ${v('echeance_bail')}\nLoyer /m² Act : ${v('loyer_m2_act')} € | Bur : ${v('loyer_m2_bur')} € | Annuel : ${v('loyer_annuel')} €\nCharges /m² : ${v('charges_m2_loc')} € | Annuelles : ${v('charges_annuelles_loc')} €\n${v('detail_charges_loc') !== '—' ? 'Détail charges : ' + v('detail_charges_loc') + '\n' : ''}`}\nImpôt foncier : ${v('impot_foncier')} € (${v('impot_foncier_m2')} €/m²) — Charge : ${v('impot_charge')}\nTaxe OM : ${v('taxe_om')} | Bureaux : ${v('taxe_bureaux')} | Entrepôt : ${v('taxe_entrepot')} (€/m²/an)\nDispo : ${v('dispo_type')} ${v('dispo_date')} ${v('dispo_mois') !== '—' ? v('dispo_mois') + ' mois' : ''}\n\n11. MANDAT\nType : ${v('type_mandat')} | Confrères : ${v('confreres')}\nRémun. offreur : ${v('remun_offreur')} | Preneur : ${v('remun_preneur')} | Partage : ${v('partage_remun')}\n${v('incentive') !== '—' ? 'Incentive : ' + v('incentive') + '\n' : ''}Début : ${v('debut_mandat')} | Durée : ${v('duree_mandat')}\n\n12. ACCROCHE & ARGUMENTAIRE\n${v('accroche')}\n\nPoints clés :\n${v('points_cles')}\n\nArgumentaire :\n${v('argumentaire')}\n\n13. PROCÉDURE DE VISITE\nClé n° : ${v('num_cle')} | Contact : ${v('contact_place')}\n${v('visite_autres') !== '—' ? v('visite_autres') + '\n' : ''}\n14. ACTIONS MARKETING\nWeb : ${v('pub_web')} | Auth. mail propriétaire : ${v('auth_mail_prop')} | Confrère : ${v('diffusion_confrere')}\nPhotos : ${v('chemin_photos')}\n${v('marketing_autres') !== '—' ? v('marketing_autres') + '\n' : ''}\n${'='.repeat(50)}\n« La réussite appartient à tout le monde, c'est au travail d'équipe qu'en revient le mérite »`;
+}
+
+function sendEmail() {
+  const data = collectData();
+  if (!data.nego) { showToast('⚠️ Indiquez votre nom (Négociateur)'); return; }
+  const adresse = [data.adresse, data.cp, data.ville].filter(Boolean).join(' ') || 'Nouvelle offre';
+  const subject = encodeURIComponent(`[FICHE OFFRE] ${adresse} — ${data.nego}`);
+  const bodyText = formatBody(data);
+  const mailto = `mailto:jennifer.donardin@bnpparibas.com?subject=${subject}&body=${encodeURIComponent(bodyText)}`;
+  if (mailto.length > 8000) {
+    copyToClipboard();
+    window.location.href = `mailto:jennifer.donardin@bnpparibas.com?subject=${subject}&body=${encodeURIComponent('Fiche trop longue pour mailto. Contenu copié dans le presse-papier — collez-le ici.\n\nNégociateur : ' + (data.nego||'') + '\nAdresse : ' + adresse)}`;
+    showToast('📋 Contenu copié ! Collez-le dans l\'email.');
+  } else {
+    window.location.href = mailto;
+    showToast('✅ Application email ouverte !');
+  }
+}
+
+function copyToClipboard() {
+  const text = formatBody(collectData());
+  if (navigator.clipboard) navigator.clipboard.writeText(text).then(() => showToast('📋 Copié dans le presse-papier !'));
+  else {
+    const ta = document.createElement('textarea'); ta.value = text; ta.style.cssText = 'position:fixed;opacity:0'; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); showToast('📋 Copié !');
+  }
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+updateProgress();
+</script>
+</body>
+</html>
