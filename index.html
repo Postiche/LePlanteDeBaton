@@ -21,9 +21,9 @@
 </head>
 <body>
 
-    <!-- ═══════════════════════════════════════════
+    <!-- ═════════════════════════════════════════════
          NAVIGATION
-    ═══════════════════════════════════════════ -->
+    ═════════════════════════════════════════════ -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#accueil" class="nav-logo">Le Planté de Bâton</a>
@@ -31,111 +31,117 @@
                 <span></span><span></span><span></span>
             </button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#logement">Le logement</a></li>
-                <li><a href="#galerie">Photos</a></li>
-                <li><a href="#equipements">Équipements</a></li>
-                <li><a href="#activites">Activités</a></li>
-                <li><a href="#tarifs">Tarifs</a></li>
-                <li><a href="#reservation" class="nav-cta">Réserver</a></li>
+                <li><a href="#logement" data-i18n="nav.logement">Le logement</a></li>
+                <li><a href="#galerie" data-i18n="nav.galerie">Photos</a></li>
+                <li><a href="#equipements" data-i18n="nav.equipements">Équipements</a></li>
+                <li><a href="#activites" data-i18n="nav.activites">Activités</a></li>
+                <li><a href="#tarifs" data-i18n="nav.tarifs">Tarifs</a></li>
+                <li><a href="#reservation" class="nav-cta" data-i18n="nav.reserver">Réserver</a></li>
             </ul>
+            <div class="lang-switcher">
+                <button class="lang-btn active" data-lang="fr" onclick="setLang('fr')">FR</button>
+                <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" data-lang="de" onclick="setLang('de')">DE</button>
+                <button class="lang-btn" data-lang="es" onclick="setLang('es')">ES</button>
+            </div>
         </div>
     </nav>
 
-    <!-- ═══════════════════════════════════════════
+    <!-- ═════════════════════════════════════════════
          HERO
-    ═══════════════════════════════════════════ -->
+    ═════════════════════════════════════════════ -->
     <section id="accueil" class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <p class="hero-pre">Courchevel 1550 · Les 3 Vallées</p>
-            <h1 class="hero-title">Le Planté<br>de Bâton</h1>
-            <p class="hero-subtitle">Ski in · Ski out, face aux pistes de Courchevel.<br>Restaurants et commerces à moins de 2 minutes.</p>
+            <p class="hero-pre" data-i18n="hero.pre">Courchevel 1550 · Les 3 Vallées</p>
+            <h1 class="hero-title" data-i18n="hero.title">Le Planté<br>de Bâton</h1>
+            <p class="hero-subtitle" data-i18n="hero.subtitle">Ski in · Ski out, face aux pistes de Courchevel.<br>Restaurants et commerces à moins de 2 minutes.</p>
             <div class="hero-badges">
-                <span><i class="fas fa-person-skiing"></i> Ski in / Ski out</span>
-                <span><i class="fas fa-users"></i> 6 personnes</span>
-                <span><i class="fas fa-bed"></i> 3 chambres</span>
-                <span><i class="fas fa-mountain"></i> Face aux pistes</span>
-                <span><i class="fas fa-dog"></i> Chiens acceptés</span>
+                <span><i class="fas fa-person-skiing"></i> <span data-i18n="hero.badge1">Ski in / Ski out</span></span>
+                <span><i class="fas fa-users"></i> <span data-i18n="hero.badge2">6 personnes</span></span>
+                <span><i class="fas fa-bed"></i> <span data-i18n="hero.badge3">3 chambres</span></span>
+                <span><i class="fas fa-mountain"></i> <span data-i18n="hero.badge4">Face aux pistes</span></span>
+                <span><i class="fas fa-dog"></i> <span data-i18n="hero.badge5">Chiens acceptés</span></span>
             </div>
             <div class="hero-actions">
-                <a href="#reservation" class="btn btn-primary">Vérifier les disponibilités</a>
-                <a href="#logement" class="btn btn-secondary">Découvrir</a>
+                <a href="#reservation" class="btn btn-primary" data-i18n="hero.cta1">Vérifier les disponibilités</a>
+                <a href="#logement" class="btn btn-secondary" data-i18n="hero.cta2">Découvrir</a>
             </div>
         </div>
         <div class="hero-scroll-hint">
-            <span>Défiler</span>
+            <span data-i18n="hero.scroll">Défiler</span>
             <i class="fas fa-chevron-down"></i>
         </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════
+    <!-- ═════════════════════════════════════════════
          HIGHLIGHTS
-    ═══════════════════════════════════════════ -->
+    ═════════════════════════════════════════════ -->
     <section class="highlights">
         <div class="container">
             <div class="highlights-grid">
                 <div class="highlight-item reveal">
                     <div class="highlight-icon"><i class="fas fa-person-skiing"></i></div>
-                    <h3>Ski in · Ski out</h3>
-                    <p>Chaussez vos skis depuis le pas de porte, rentrez sur les skis</p>
+                    <h3 data-i18n="hl1.title">Ski in · Ski out</h3>
+                    <p data-i18n="hl1.desc">Chaussez vos skis depuis le pas de porte, rentrez sur les skis</p>
                 </div>
                 <div class="highlight-item reveal">
                     <div class="highlight-icon"><i class="fas fa-map-location-dot"></i></div>
-                    <h3>Courchevel, Les 3 Vallées</h3>
-                    <p>600 km de pistes — le plus grand domaine skiable du monde</p>
+                    <h3 data-i18n="hl2.title">Courchevel, Les 3 Vallées</h3>
+                    <p data-i18n="hl2.desc">600 km de pistes — le plus grand domaine skiable du monde</p>
                 </div>
                 <div class="highlight-item reveal">
                     <div class="highlight-icon"><i class="fas fa-utensils"></i></div>
-                    <h3>Commerces &amp; restos à 2 min</h3>
-                    <p>Restaurants, bars et boutiques accessibles à pied en moins de 2 minutes</p>
+                    <h3 data-i18n="hl3.title">Commerces &amp; restos à 2 min</h3>
+                    <p data-i18n="hl3.desc">Restaurants, bars et boutiques accessibles à pied en moins de 2 minutes</p>
                 </div>
                 <div class="highlight-item reveal">
                     <div class="highlight-icon"><i class="fas fa-sun"></i></div>
-                    <h3>Été comme hiver</h3>
-                    <p>Ski, raquettes, randonnée, VTT, golf… pour toutes les saisons</p>
+                    <h3 data-i18n="hl4.title">Été comme hiver</h3>
+                    <p data-i18n="hl4.desc">Ski, raquettes, randonnée, VTT, golf… pour toutes les saisons</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════
+    <!-- ═════════════════════════════════════════════
          LE LOGEMENT
-    ═══════════════════════════════════════════ -->
+    ═════════════════════════════════════════════ -->
     <section id="logement" class="logement">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-label">Le logement</span>
-                <h2>Votre home away from home</h2>
-                <p>Un nid douillet niché dans les Alpes, aménagé avec soin pour vous offrir tout le confort d'un séjour inoubliable.</p>
+                <span class="section-label" data-i18n="section.logement">Le logement</span>
+                <h2 data-i18n="logement.h2">Votre home away from home</h2>
+                <p data-i18n="logement.p0">Un nid douillet niché dans les Alpes, aménagé avec soin pour vous offrir tout le confort d'un séjour inoubliable.</p>
             </div>
             <div class="logement-grid">
                 <div class="logement-text reveal">
-                    <p>Bienvenue au <strong>Planté de Bâton</strong>, un appartement <strong>ski in · ski out</strong> situé rue des Rois à Courchevel, directement face aux pistes. Chaussez vos skis depuis le pas de porte et rentrez chez vous sur les lattes en fin de journée.</p>
-                    <p>En moins de 2 minutes à pied, vous accédez aux restaurants, bars, commerces et boutiques de la station. Un emplacement exceptionnel qui vous permet de profiter pleinement de la vie de Courchevel sans jamais prendre la voiture.</p>
-                    <p>L'appartement lumineux s'articule autour d'un grand séjour ouvert sur la cuisine équipée, avec une vue imprenable sur les pistes et les sommets. Trois chambres confortables accueillent jusqu'à 6 voyageurs dans une atmosphère chaleureuse mêlant bois naturel et couleurs de la montagne.</p>
+                    <p data-i18n="logement.p1">Bienvenue au <strong>Planté de Bâton</strong>, un appartement <strong>ski in · ski out</strong> situé rue des Rois à Courchevel, directement face aux pistes. Chaussez vos skis depuis le pas de porte et rentrez chez vous sur les lattes en fin de journée.</p>
+                    <p data-i18n="logement.p2">En moins de 2 minutes à pied, vous accédez aux restaurants, bars, commerces et boutiques de la station. Un emplacement exceptionnel qui vous permet de profiter pleinement de la vie de Courchevel sans jamais prendre la voiture.</p>
+                    <p data-i18n="logement.p3">L'appartement lumineux s'articule autour d'un grand séjour ouvert sur la cuisine équipée, avec une vue imprenable sur les pistes et les sommets. Trois chambres confortables accueillent jusqu'à 6 voyageurs dans une atmosphère chaleureuse mêlant bois naturel et couleurs de la montagne.</p>
                     <div class="vue-callout">
                         <div class="vue-callout-icon"><i class="fas fa-mountain-sun"></i></div>
                         <div>
-                            <strong>Une vue unique sur les pistes</strong>
-                            <p>Depuis le balcon comme depuis le salon, vous êtes face aux pistes de Courchevel 1550. Le spectacle est permanent — skieurs en journée, lumières de la station le soir.</p>
+                            <strong data-i18n="logement.callout.title">Une vue unique sur les pistes</strong>
+                            <p data-i18n="logement.callout.desc">Depuis le balcon comme depuis le salon, vous êtes face aux pistes de Courchevel 1550. Le spectacle est permanent — skieurs en journée, lumières de la station le soir.</p>
                         </div>
                     </div>
                     <div class="logement-stats">
                         <div class="stat">
                             <strong>6</strong>
-                            <span>voyageurs</span>
+                            <span data-i18n="stat.voyageurs">voyageurs</span>
                         </div>
                         <div class="stat">
                             <strong>3</strong>
-                            <span>chambres</span>
+                            <span data-i18n="stat.chambres">chambres</span>
                         </div>
                         <div class="stat">
                             <strong>2</strong>
-                            <span>salles de bain</span>
+                            <span data-i18n="stat.sdb">salles de bain</span>
                         </div>
                         <div class="stat">
                             <strong>90</strong>
-                            <span>m²</span>
+                            <span data-i18n="stat.m2">m²</span>
                         </div>
                     </div>
                 </div>
@@ -148,53 +154,73 @@
         </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════
+    <!-- ═════════════════════════════════════════════
          GALERIE
-    ═══════════════════════════════════════════ -->
+    ═════════════════════════════════════════════ -->
     <section id="galerie" class="galerie">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-label">Galerie</span>
-                <h2>Découvrez le logement en images</h2>
-                <p>Cliquez sur une photo pour l'agrandir</p>
+                <span class="section-label" data-i18n="section.galerie">Galerie</span>
+                <h2 data-i18n="galerie.h2">Découvrez le logement en images</h2>
+                <p data-i18n="galerie.sub">Cliquez sur une photo pour l'agrandir</p>
             </div>
             <div class="galerie-grid reveal">
-                <!-- Photo principale : vue depuis le balcon — argument n°1 -->
+                <!-- Vue station — hero photo -->
                 <div class="galerie-item galerie-main" data-index="0">
+                    <img src="images/vue-station.jpg" alt="Vue de Courchevel 1550 : village et pistes depuis l'extérieur" loading="lazy">
+                    <div class="galerie-overlay"><i class="fas fa-expand"></i></div>
+                    <div class="galerie-badge" data-i18n="galerie.badge1">La Vue</div>
+                </div>
+                <!-- Vue balcon -->
+                <div class="galerie-item" data-index="1">
                     <img src="images/vue-balcon.jpg" alt="Vue depuis le balcon : pistes de Courchevel 1550 et village" loading="lazy">
                     <div class="galerie-overlay"><i class="fas fa-expand"></i></div>
-                    <div class="galerie-badge">La Vue</div>
+                    <div class="galerie-badge" data-i18n="galerie.badge2">Face aux pistes</div>
                 </div>
-                <!-- Vue extérieure pistes -->
-                <div class="galerie-item" data-index="1">
+                <!-- Salon -->
+                <div class="galerie-item" data-index="2">
+                    <img src="images/salon.jpg" alt="Salon avec cheminée en pierre, skis au mur et décoration montagne" loading="lazy">
+                    <div class="galerie-overlay"><i class="fas fa-expand"></i></div>
+                </div>
+                <!-- Salle à manger -->
+                <div class="galerie-item" data-index="3">
+                    <img src="images/salle-manger.jpg" alt="Salle à manger : table en bois massif, lustre bois de cerf et poutres apparentes" loading="lazy">
+                    <div class="galerie-overlay"><i class="fas fa-expand"></i></div>
+                </div>
+                <!-- Chambre rouge -->
+                <div class="galerie-item" data-index="4">
+                    <img src="images/chambre-rouge.jpg" alt="Chambre avec accents rouges et éclairage LED au plafond" loading="lazy">
+                    <div class="galerie-overlay"><i class="fas fa-expand"></i></div>
+                </div>
+                <!-- Chambre vue -->
+                <div class="galerie-item" data-index="5">
+                    <img src="images/chambre-vue.jpg" alt="Chambre avec plaid en fourrure et grande fenêtre sur la montagne" loading="lazy">
+                    <div class="galerie-overlay"><i class="fas fa-expand"></i></div>
+                </div>
+                <!-- Vue pistes extérieure -->
+                <div class="galerie-item" data-index="6">
                     <img src="images/vue-pistes.jpg" alt="Vue extérieure : face aux pistes et au télésiège" loading="lazy">
                     <div class="galerie-overlay"><i class="fas fa-expand"></i></div>
-                    <div class="galerie-badge">Face aux pistes</div>
                 </div>
                 <!-- Séjour Noël -->
-                <div class="galerie-item" data-index="2">
+                <div class="galerie-item" data-index="7">
                     <img src="images/salon-noel.jpg" alt="Séjour : lustre bois de cerf, cheminée et table en bois massif" loading="lazy">
                     <div class="galerie-overlay"><i class="fas fa-expand"></i></div>
                 </div>
-                <!-- Salon cheminée -->
-                <div class="galerie-item" data-index="3">
-                    <img src="images/salon-cheminee.jpg" alt="Salon avec cheminée en pierre et grand canapé" loading="lazy">
-                    <div class="galerie-overlay"><i class="fas fa-expand"></i></div>
-                </div>
                 <!-- Terrasse -->
-                <div class="galerie-item" data-index="4">
+                <div class="galerie-item" data-index="8">
                     <img src="images/terrasse.jpg" alt="Terrasse ensoleillée avec transats et réserve de bois" loading="lazy">
                     <div class="galerie-overlay"><i class="fas fa-expand"></i></div>
                 </div>
-                <!-- Chambre -->
-                <div class="galerie-item" data-index="5">
+                <!-- Chambre double -->
+                <div class="galerie-item" data-index="9">
                     <img src="images/chambre-double.jpg" alt="Chambre avec lit double et parquet bois" loading="lazy">
                     <div class="galerie-overlay"><i class="fas fa-expand"></i></div>
                 </div>
             </div>
             <div class="galerie-cta reveal">
                 <a href="https://www.airbnb.fr/rooms/1260906762212370216" target="_blank" rel="noopener" class="btn btn-outline">
-                    <i class="fab fa-airbnb"></i> Voir toutes les photos sur Airbnb
+                    <i class="fab fa-airbnb"></i> <span data-i18n="galerie.airbnb">Voir toutes les photos sur Airbnb</span>
                 </a>
             </div>
         </div>
@@ -210,74 +236,74 @@
         </div>
     </div>
 
-    <!-- ═══════════════════════════════════════════
+    <!-- ═════════════════════════════════════════════
          ÉQUIPEMENTS
-    ═══════════════════════════════════════════ -->
+    ═════════════════════════════════════════════ -->
     <section id="equipements" class="equipements">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-label">Équipements</span>
-                <h2>Tout le confort pour un séjour parfait</h2>
+                <span class="section-label" data-i18n="section.equip">Équipements</span>
+                <h2 data-i18n="equip.h2">Tout le confort pour un séjour parfait</h2>
             </div>
             <div class="equipements-grid">
                 <div class="equip-category reveal">
-                    <h3><i class="fas fa-house"></i> Espaces de vie</h3>
+                    <h3><i class="fas fa-house"></i> <span data-i18n="equip.espaces">Espaces de vie</span></h3>
                     <ul>
-                        <li><i class="fas fa-check"></i> Grand séjour lumineux</li>
-                        <li><i class="fas fa-check"></i> Terrasse avec vue montagne</li>
-                        <li><i class="fas fa-check"></i> Coin repas pour 6 personnes</li>
-                        <li><i class="fas fa-check"></i> Local skis &amp; équipements</li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="equip.e1">Grand séjour lumineux</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="equip.e2">Terrasse avec vue montagne</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="equip.e3">Coin repas pour 6 personnes</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="equip.e4">Local skis &amp; équipements</span></li>
                     </ul>
                 </div>
                 <div class="equip-category reveal">
-                    <h3><i class="fas fa-utensils"></i> Cuisine</h3>
+                    <h3><i class="fas fa-utensils"></i> <span data-i18n="equip.cuisine">Cuisine</span></h3>
                     <ul>
-                        <li><i class="fas fa-check"></i> Cuisine entièrement équipée</li>
-                        <li><i class="fas fa-check"></i> Réfrigérateur &amp; congélateur</li>
-                        <li><i class="fas fa-check"></i> Lave-vaisselle</li>
-                        <li><i class="fas fa-check"></i> Four &amp; micro-ondes</li>
-                        <li><i class="fas fa-check"></i> Machine à café &amp; bouilloire</li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="equip.c1">Cuisine entièrement équipée</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="equip.c2">Réfrigérateur &amp; congélateur</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="equip.c3">Lave-vaisselle</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="equip.c4">Four &amp; micro-ondes</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="equip.c5">Machine à café &amp; bouilloire</span></li>
                     </ul>
                 </div>
                 <div class="equip-category reveal">
-                    <h3><i class="fas fa-wifi"></i> Connectivité &amp; confort</h3>
+                    <h3><i class="fas fa-wifi"></i> <span data-i18n="equip.connect">Connectivité &amp; confort</span></h3>
                     <ul>
-                        <li><i class="fas fa-check"></i> Wi-Fi haut débit</li>
-                        <li><i class="fas fa-check"></i> Télévision grand écran</li>
-                        <li><i class="fas fa-check"></i> Chauffage central</li>
-                        <li><i class="fas fa-check"></i> Linge de maison fourni</li>
-                        <li><i class="fas fa-check"></i> Sèche-cheveux</li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="equip.k1">Wi-Fi haut débit</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="equip.k2">Télévision grand écran</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="equip.k3">Chauffage central</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="equip.k4">Linge de maison fourni</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="equip.k5">Sèche-cheveux</span></li>
                     </ul>
                 </div>
                 <div class="equip-category reveal">
-                    <h3><i class="fas fa-car"></i> Praticité</h3>
+                    <h3><i class="fas fa-car"></i> <span data-i18n="equip.pratique">Praticité</span></h3>
                     <ul>
-                        <li><i class="fas fa-check"></i> Parking (en supplément)</li>
-                        <li><i class="fas fa-check"></i> Chiens acceptés 🐕</li>
-                        <li><i class="fas fa-check"></i> Machine à laver</li>
-                        <li><i class="fas fa-check"></i> Sèche-linge</li>
-                        <li><i class="fas fa-check"></i> Fer &amp; table à repasser</li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="equip.p1">Parking (en supplément)</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="equip.p2">Chiens acceptés 🐕</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="equip.p3">Machine à laver</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="equip.p4">Sèche-linge</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="equip.p5">Fer &amp; table à repasser</span></li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════
+    <!-- ═════════════════════════════════════════════
          AVIS
-    ═══════════════════════════════════════════ -->
+    ═════════════════════════════════════════════ -->
     <section id="avis" class="avis">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-label">Avis voyageurs</span>
-                <h2>Ce qu'ils en pensent</h2>
+                <span class="section-label" data-i18n="section.avis">Avis voyageurs</span>
+                <h2 data-i18n="avis.h2">Ce qu'ils en pensent</h2>
                 <div class="avis-global">
                     <div class="avis-score">4,8</div>
                     <div>
                         <div class="avis-stars-lg">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i>
                         </div>
-                        <p>10 avis vérifiés · <a href="https://www.airbnb.fr/rooms/1260906762212370216" target="_blank" rel="noopener">Voir sur Airbnb <i class="fab fa-airbnb"></i></a></p>
+                        <p><span data-i18n="avis.count">10 avis vérifiés · Voir sur Airbnb</span> <a href="https://www.airbnb.fr/rooms/1260906762212370216" target="_blank" rel="noopener"><i class="fab fa-airbnb"></i></a></p>
                     </div>
                 </div>
             </div>
@@ -292,7 +318,7 @@
                         </div>
                     </div>
                     <div class="avis-rating"><div class="avis-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span>5,0</span></div>
-                    <p class="avis-text">«&nbsp;Une vue absolument incroyable sur les pistes depuis le balcon. On a passé autant de temps dehors qu'à skier tant c'est beau le matin ! Appartement très bien équipé, propre, et l'hôte super réactif. On revient l'hiver prochain !&nbsp;»</p>
+                    <p class="avis-text">« Une vue absolument incroyable sur les pistes depuis le balcon. On a passé autant de temps dehors qu'à skier tant c'est beau le matin ! Appartement très bien équipé, propre, et l'hôte super réactif. On revient l'hiver prochain ! »</p>
                     <div class="avis-source"><i class="fab fa-airbnb"></i> Airbnb</div>
                 </div>
 
@@ -305,7 +331,7 @@
                         </div>
                     </div>
                     <div class="avis-rating"><div class="avis-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span>5,0</span></div>
-                    <p class="avis-text">«&nbsp;Le ski in/ski out c'est vraiment le top du top. On chaussait les skis depuis la résidence. Idéal avec des enfants. La cheminée, le grand canapé, le lustre en bois de cerf… l'appartement est vraiment chaleureux. Un sans-faute.&nbsp;»</p>
+                    <p class="avis-text">« Le ski in/ski out c'est vraiment le top du top. On chaussait les skis depuis la résidence. Idéal avec des enfants. La cheminée, le grand canapé, le lustre en bois de cerf… l'appartement est vraiment chaleureux. Un sans-faute. »</p>
                     <div class="avis-source"><i class="fab fa-airbnb"></i> Airbnb</div>
                 </div>
 
@@ -318,7 +344,7 @@
                         </div>
                     </div>
                     <div class="avis-rating"><div class="avis-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i></div><span>4,5</span></div>
-                    <p class="avis-text">«&nbsp;Wir haben Weihnachten hier verbracht — einfach perfekt ! Tolle Aussicht auf die Pisten, schöne Innenausstattung und super Lage direkt an der Piste. Nächstes Jahr kommen wir wieder !&nbsp;»</p>
+                    <p class="avis-text">« Wir haben Weihnachten hier verbracht — einfach perfekt ! Tolle Aussicht auf die Pisten, schöne Innenausstattung und super Lage direkt an der Piste. Nächstes Jahr kommen wir wieder ! »</p>
                     <div class="avis-source"><i class="fab fa-airbnb"></i> Airbnb</div>
                 </div>
 
@@ -331,7 +357,7 @@
                         </div>
                     </div>
                     <div class="avis-rating"><div class="avis-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span>5,0</span></div>
-                    <p class="avis-text">«&nbsp;Séjour parfait pour le Nouvel An ! La vue depuis le balcon sur les feux d'artifice de la station était magique. L'appart est grand, bien pensé, et les restaurants vraiment à 2 minutes comme promis.&nbsp;»</p>
+                    <p class="avis-text">« Séjour parfait pour le Nouvel An ! La vue depuis le balcon sur les feux d'artifice de la station était magique. L'appart est grand, bien pensé, et les restaurants vraiment à 2 minutes comme promis. »</p>
                     <div class="avis-source"><i class="fab fa-airbnb"></i> Airbnb</div>
                 </div>
 
@@ -344,7 +370,7 @@
                         </div>
                     </div>
                     <div class="avis-rating"><div class="avis-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span>5,0</span></div>
-                    <p class="avis-text">«&nbsp;Absolutely stunning views of the slopes. We had coffee on the balcony every morning watching the skiers go by. The apartment is spacious, warm and beautifully decorated. Cannot recommend enough !&nbsp;»</p>
+                    <p class="avis-text">« Absolutely stunning views of the slopes. We had coffee on the balcony every morning watching the skiers go by. The apartment is spacious, warm and beautifully decorated. Cannot recommend enough ! »</p>
                     <div class="avis-source"><i class="fab fa-airbnb"></i> Airbnb</div>
                 </div>
 
@@ -357,7 +383,7 @@
                         </div>
                     </div>
                     <div class="avis-rating"><div class="avis-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div><span>4,2</span></div>
-                    <p class="avis-text">«&nbsp;Très bon séjour dans l'ensemble. L'appartement est bien situé, face aux pistes, avec une belle vue. Quelques rangements à optimiser dans la cuisine, mais l'hôte est très disponible et à l'écoute.&nbsp;»</p>
+                    <p class="avis-text">« Très bon séjour dans l'ensemble. L'appartement est bien situé, face aux pistes, avec une belle vue. Quelques rangements à optimiser dans la cuisine, mais l'hôte est très disponible et à l'écoute. »</p>
                     <div class="avis-source"><i class="fab fa-airbnb"></i> Airbnb</div>
                 </div>
 
@@ -370,7 +396,7 @@
                         </div>
                     </div>
                     <div class="avis-rating"><div class="avis-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span>5,0</span></div>
-                    <p class="avis-text">«&nbsp;Notre troisième séjour ici et toujours aussi bien ! Le Planté de Bâton c'est notre base de ski depuis 3 ans. Situation idéale, vue sur les pistes incomparable, logement impeccable. Merci encore !&nbsp;»</p>
+                    <p class="avis-text">« Notre troisième séjour ici et toujours aussi bien ! Le Planté de Bâton c'est notre base de ski depuis 3 ans. Situation idéale, vue sur les pistes incomparable, logement impeccable. Merci encore ! »</p>
                     <div class="avis-source"><i class="fab fa-airbnb"></i> Airbnb</div>
                 </div>
 
@@ -383,7 +409,7 @@
                         </div>
                     </div>
                     <div class="avis-rating"><div class="avis-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i></div><span>4,8</span></div>
-                    <p class="avis-text">«&nbsp;Abbiamo trascorso una settimana meravigliosa. La vista è spettacolare e si può sciare direttamente dall'appartamento. Molto spazioso per 6 persone, bellissima decorazione. Consigliatissimo !&nbsp;»</p>
+                    <p class="avis-text">« Abbiamo trascorso una settimana meravigliosa. La vista è spettacolare e si può sciare direttamente dall'appartamento. Molto spazioso per 6 persone, bellissima decorazione. Consigliatissimo ! »</p>
                     <div class="avis-source"><i class="fab fa-airbnb"></i> Airbnb</div>
                 </div>
 
@@ -396,7 +422,7 @@
                         </div>
                     </div>
                     <div class="avis-rating"><div class="avis-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span>5,0</span></div>
-                    <p class="avis-text">«&nbsp;Week-end entre copines absolument parfait ! L'appartement est grand, la cheminée magnifique, la terrasse avec vue sur les pistes juste incroyable. Restaurants à deux pas. On a adoré !&nbsp;»</p>
+                    <p class="avis-text">« Week-end entre copines absolument parfait ! L'appartement est grand, la cheminée magnifique, la terrasse avec vue sur les pistes juste incroyable. Restaurants à deux pas. On a adoré ! »</p>
                     <div class="avis-source"><i class="fab fa-airbnb"></i> Airbnb</div>
                 </div>
 
@@ -409,7 +435,7 @@
                         </div>
                     </div>
                     <div class="avis-rating"><div class="avis-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i></div><span>4,5</span></div>
-                    <p class="avis-text">«&nbsp;Vacances de février en famille. Les enfants ont adoré les lits superposés, les parents la cheminée et le grand salon. Accès aux pistes direct depuis la résidence, c'est vraiment pratique. Très bon séjour !&nbsp;»</p>
+                    <p class="avis-text">« Vacances de février en famille. Les enfants ont adoré les lits superposés, les parents la cheminée et le grand salon. Accès aux pistes direct depuis la résidence, c'est vraiment pratique. Très bon séjour ! »</p>
                     <div class="avis-source"><i class="fab fa-airbnb"></i> Airbnb</div>
                 </div>
 
@@ -417,55 +443,55 @@
         </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════
+    <!-- ═════════════════════════════════════════════
          ACTIVITÉS
-    ═══════════════════════════════════════════ -->
+    ═════════════════════════════════════════════ -->
     <section id="activites" class="activites">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-label">Activités</span>
-                <h2>Le paradis des quatre saisons</h2>
-                <p>Que vous soyez amoureux de neige ou de verdure, les Alpes vous offrent un terrain de jeu exceptionnel.</p>
+                <span class="section-label" data-i18n="section.activites">Activités</span>
+                <h2 data-i18n="activites.h2">Le paradis des quatre saisons</h2>
+                <p data-i18n="activites.sub">Que vous soyez amoureux de neige ou de verdure, les Alpes vous offrent un terrain de jeu exceptionnel.</p>
             </div>
             <div class="activites-tabs reveal">
                 <button class="tab-btn active" data-tab="hiver">
-                    <i class="fas fa-snowflake"></i> Hiver
+                    <i class="fas fa-snowflake"></i> <span data-i18n="tab.hiver">Hiver</span>
                 </button>
                 <button class="tab-btn" data-tab="ete">
-                    <i class="fas fa-sun"></i> Été
+                    <i class="fas fa-sun"></i> <span data-i18n="tab.ete">Été</span>
                 </button>
             </div>
             <div class="tab-content active" id="hiver">
                 <div class="activites-grid">
                     <div class="activite-card">
                         <div class="activite-icon">⛷️</div>
-                        <h4>Les 3 Vallées</h4>
-                        <p>600 km de pistes reliées, le plus grand domaine skiable du monde — depuis votre porte.</p>
+                        <h4 data-i18n="act.h1">Les 3 Vallées</h4>
+                        <p data-i18n="act.h1d">600 km de pistes reliées, le plus grand domaine skiable du monde — depuis votre porte.</p>
                     </div>
                     <div class="activite-card">
-                        <div class="activite-icon">🏂</div>
-                        <h4>Snowpark</h4>
-                        <p>Le snowpark de Courchevel ravira snowboarders et freestylers de tous niveaux.</p>
+                        <div class="activite-icon">🎂</div>
+                        <h4 data-i18n="act.h2">Snowpark</h4>
+                        <p data-i18n="act.h2d">Le snowpark de Courchevel ravira snowboarders et freestylers de tous niveaux.</p>
                     </div>
                     <div class="activite-card">
                         <div class="activite-icon">🎿</div>
-                        <h4>Ski de fond</h4>
-                        <p>Des pistes nordiques panoramiques à travers les forêts et alpages de Courchevel.</p>
+                        <h4 data-i18n="act.h3">Ski de fond</h4>
+                        <p data-i18n="act.h3d">Des pistes nordiques panoramiques à travers les forêts et alpages de Courchevel.</p>
                     </div>
                     <div class="activite-card">
                         <div class="activite-icon">🧊</div>
-                        <h4>Patinoire &amp; luge</h4>
-                        <p>Patinoire olympique et piste de luge — des activités idéales en famille.</p>
+                        <h4 data-i18n="act.h4">Patinoire &amp; luge</h4>
+                        <p data-i18n="act.h4d">Patinoire olympique et piste de luge — des activités idéales en famille.</p>
                     </div>
                     <div class="activite-card">
                         <div class="activite-icon">🏔️</div>
-                        <h4>Raquettes</h4>
-                        <p>Itinéraires balisés dans la Vanoise pour des balades inoubliables hors des pistes.</p>
+                        <h4 data-i18n="act.h5">Raquettes</h4>
+                        <p data-i18n="act.h5d">Itinéraires balisés dans la Vanoise pour des balades inoubliables hors des pistes.</p>
                     </div>
                     <div class="activite-card">
                         <div class="activite-icon">🍽️</div>
-                        <h4>Gastronomie</h4>
-                        <p>Courchevel concentre le plus grand nombre d'étoiles Michelin d'une station de ski au monde.</p>
+                        <h4 data-i18n="act.h6">Gastronomie</h4>
+                        <p data-i18n="act.h6d">Courchevel concentre le plus grand nombre d'étoiles Michelin d'une station de ski au monde.</p>
                     </div>
                 </div>
             </div>
@@ -473,98 +499,98 @@
                 <div class="activites-grid">
                     <div class="activite-card">
                         <div class="activite-icon">🥾</div>
-                        <h4>Randonnée — Parc de la Vanoise</h4>
-                        <p>Accès direct au parc national : lac de Crève-Tête, Col de la Loze et vues à couper le souffle.</p>
+                        <h4 data-i18n="act.e1">Randonnée — Parc de la Vanoise</h4>
+                        <p data-i18n="act.e1d">Accès direct au parc national : lac de Crève-Tête, Col de la Loze et vues à couper le souffle.</p>
                     </div>
                     <div class="activite-card">
                         <div class="activite-icon">🚵</div>
-                        <h4>VTT — Col de la Loze</h4>
-                        <p>Descente mythique du Col de la Loze (Tour de France), trails techniques pour tous niveaux.</p>
+                        <h4 data-i18n="act.e2">VTT — Col de la Loze</h4>
+                        <p data-i18n="act.e2d">Descente mythique du Col de la Loze (Tour de France), trails techniques pour tous niveaux.</p>
                     </div>
                     <div class="activite-card">
                         <div class="activite-icon">⛳</div>
-                        <h4>Golf d'altitude</h4>
-                        <p>Le Golf Club de Courchevel (1850 m) offre un parcours unique avec panorama alpin.</p>
+                        <h4 data-i18n="act.e3">Golf d'altitude</h4>
+                        <p data-i18n="act.e3d">Le Golf Club de Courchevel (1850 m) offre un parcours unique avec panorama alpin.</p>
                     </div>
                     <div class="activite-card">
                         <div class="activite-icon">🪂</div>
-                        <h4>Parapente</h4>
-                        <p>Décollage depuis les hauteurs de Courchevel pour un vol plané au-dessus des 3 Vallées.</p>
+                        <h4 data-i18n="act.e4">Parapente</h4>
+                        <p data-i18n="act.e4d">Décollage depuis les hauteurs de Courchevel pour un vol plané au-dessus des 3 Vallées.</p>
                     </div>
                     <div class="activite-card">
                         <div class="activite-icon">🏊</div>
-                        <h4>Piscines &amp; lacs</h4>
-                        <p>Centre aquatique de Courchevel et lacs de montagne (Saint-Guérin, Bozel) à proximité.</p>
+                        <h4 data-i18n="act.e5">Piscines &amp; lacs</h4>
+                        <p data-i18n="act.e5d">Centre aquatique de Courchevel et lacs de montagne (Saint-Guérin, Bozel) à proximité.</p>
                     </div>
                     <div class="activite-card">
                         <div class="activite-icon">🌿</div>
-                        <h4>Via ferrata &amp; escalade</h4>
-                        <p>Voies d'escalade et via ferratas aménagées dans les massifs environnants.</p>
+                        <h4 data-i18n="act.e6">Via ferrata &amp; escalade</h4>
+                        <p data-i18n="act.e6d">Voies d'escalade et via ferratas aménagées dans les massifs environnants.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════
+    <!-- ═════════════════════════════════════════════
          TARIFS
-    ═══════════════════════════════════════════ -->
+    ═════════════════════════════════════════════ -->
     <section id="tarifs" class="tarifs">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-label">Tarifs</span>
-                <h2>Des prix clairs selon la saison</h2>
-                <p>Tarifs indicatifs à la nuit. Frais de ménage et taxe de séjour en sus selon Airbnb.</p>
+                <span class="section-label" data-i18n="section.tarifs">Tarifs</span>
+                <h2 data-i18n="tarifs.h2">Des prix clairs selon la saison</h2>
+                <p data-i18n="tarifs.sub">Tarifs indicatifs à la nuit. Frais de ménage et taxe de séjour en sus selon Airbnb.</p>
             </div>
             <div class="tarifs-grid">
                 <div class="tarif-card reveal">
-                    <div class="tarif-saison">Été</div>
+                    <div class="tarif-saison" data-i18n="tarif.ete.label">Été</div>
                     <div class="tarif-icon">☀️</div>
-                    <div class="tarif-period">Juillet — Août</div>
+                    <div class="tarif-period" data-i18n="tarif.ete.period">Juillet — Août</div>
                     <div class="tarif-price">150 <span>€ / nuit</span></div>
-                    <p class="tarif-desc">Randonnées, VTT, golf d'altitude… Courchevel sous le soleil, sans la foule hivernale.</p>
+                    <p class="tarif-desc" data-i18n="tarif.ete.desc">Randonnées, VTT, golf d'altitude… Courchevel sous le soleil, sans la foule hivernale.</p>
                 </div>
                 <div class="tarif-card reveal">
-                    <div class="tarif-saison">Hiver — début &amp; fin de saison</div>
+                    <div class="tarif-saison" data-i18n="tarif.debut.label">Hiver — début &amp; fin de saison</div>
                     <div class="tarif-icon">🎿</div>
-                    <div class="tarif-period">Déc. (avant Noël) · Mars — Avril</div>
+                    <div class="tarif-period" data-i18n="tarif.debut.period">Déc. (avant Noël) · Mars — Avril</div>
                     <div class="tarif-price">350 <span>€ / nuit</span></div>
-                    <p class="tarif-desc">Profitez des pistes avec moins de monde et des meilleurs prix de la saison ski.</p>
+                    <p class="tarif-desc" data-i18n="tarif.debut.desc">Profitez des pistes avec moins de monde et des meilleurs prix de la saison ski.</p>
                 </div>
                 <div class="tarif-card reveal">
-                    <div class="tarif-saison">Haute saison hiver</div>
+                    <div class="tarif-saison" data-i18n="tarif.haute.label">Haute saison hiver</div>
                     <div class="tarif-icon">⛷️</div>
-                    <div class="tarif-period">Vacances scolaires · Février</div>
+                    <div class="tarif-period" data-i18n="tarif.haute.period">Vacances scolaires · Février</div>
                     <div class="tarif-price">500 <span>€ / nuit</span></div>
-                    <p class="tarif-desc">La pleine saison : pistes animées, événements, ambiance unique à Courchevel.</p>
+                    <p class="tarif-desc" data-i18n="tarif.haute.desc">La pleine saison : pistes animées, événements, ambiance unique à Courchevel.</p>
                 </div>
                 <div class="tarif-card tarif-peak reveal">
-                    <div class="tarif-top-badge">⭐ Très demandé</div>
-                    <div class="tarif-saison">Noël &amp; Nouvel An</div>
+                    <div class="tarif-top-badge" data-i18n="tarif.badge">⭐ Très demandé</div>
+                    <div class="tarif-saison" data-i18n="tarif.noel.label">Noël &amp; Nouvel An</div>
                     <div class="tarif-icon">🎄</div>
-                    <div class="tarif-period">24 déc. — 2 jan.</div>
+                    <div class="tarif-period" data-i18n="tarif.noel.period">24 déc. — 2 jan.</div>
                     <div class="tarif-price">650 <span>€ / nuit</span></div>
-                    <p class="tarif-desc">La semaine la plus magique de l'année à Courchevel. Réservez tôt, les dates partent vite !</p>
+                    <p class="tarif-desc" data-i18n="tarif.noel.desc">La semaine la plus magique de l'année à Courchevel. Réservez tôt, les dates partent vite !</p>
                 </div>
             </div>
-            <p class="tarifs-note"><i class="fas fa-circle-info"></i> Tarifs indicatifs · Consultez Airbnb pour les disponibilités et le tarif exact selon vos dates</p>
+            <p class="tarifs-note"><i class="fas fa-circle-info"></i> <span data-i18n="tarifs.note">Tarifs indicatifs · Consultez Airbnb pour les disponibilités et le tarif exact selon vos dates</span></p>
             <div class="tarifs-cta reveal">
                 <a href="https://www.airbnb.fr/rooms/1260906762212370216" target="_blank" rel="noopener" class="btn btn-airbnb">
-                    <i class="fab fa-airbnb"></i> Vérifier les disponibilités sur Airbnb
+                    <i class="fab fa-airbnb"></i> <span data-i18n="tarifs.cta">Vérifier les disponibilités sur Airbnb</span>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════
+    <!-- ═════════════════════════════════════════════
          RÉSERVATION
-    ═══════════════════════════════════════════ -->
+    ═════════════════════════════════════════════ -->
     <section id="reservation" class="reservation">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-label">Réservation</span>
-                <h2>Planifiez votre séjour</h2>
-                <p>Consultez les disponibilités et réservez directement sur Airbnb.</p>
+                <span class="section-label" data-i18n="section.resa">Réservation</span>
+                <h2 data-i18n="resa.h2">Planifiez votre séjour</h2>
+                <p data-i18n="resa.sub">Consultez les disponibilités et réservez directement sur Airbnb.</p>
             </div>
             <div class="reservation-grid">
                 <div class="reservation-airbnb reveal">
@@ -572,7 +598,7 @@
                         <div class="airbnb-header">
                             <i class="fab fa-airbnb airbnb-logo"></i>
                             <div>
-                                <h3>Réserver sur Airbnb</h3>
+                                <h3 data-i18n="resa.airbnb.h3">Réserver sur Airbnb</h3>
                                 <div class="airbnb-rating">
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
@@ -583,45 +609,45 @@
                                 </div>
                             </div>
                         </div>
-                        <p>Réservez en toute sécurité sur la plateforme Airbnb. Paiement sécurisé, annulation flexible disponible selon les périodes.</p>
+                        <p data-i18n="resa.airbnb.p">Réservez en toute sécurité sur la plateforme Airbnb. Paiement sécurisé, annulation flexible disponible selon les périodes.</p>
                         <div class="airbnb-features">
-                            <span><i class="fas fa-shield-halved"></i> Paiement sécurisé</span>
-                            <span><i class="fas fa-rotate-left"></i> Annulation flexible</span>
-                            <span><i class="fas fa-headset"></i> Support 24/7</span>
+                            <span><i class="fas fa-shield-halved"></i> <span data-i18n="resa.f1">Paiement sécurisé</span></span>
+                            <span><i class="fas fa-rotate-left"></i> <span data-i18n="resa.f2">Annulation flexible</span></span>
+                            <span><i class="fas fa-headset"></i> <span data-i18n="resa.f3">Support 24/7</span></span>
                         </div>
                         <a href="https://www.airbnb.fr/rooms/1260906762212370216"
                            target="_blank" rel="noopener"
                            class="btn btn-airbnb btn-full">
-                            <i class="fab fa-airbnb"></i> Voir les disponibilités sur Airbnb
+                            <i class="fab fa-airbnb"></i> <span data-i18n="resa.airbnb.btn">Voir les disponibilités sur Airbnb</span>
                         </a>
                     </div>
                 </div>
                 <div class="reservation-contact reveal">
                     <div class="contact-card">
-                        <h3>Une question ? Contactez-moi</h3>
-                        <p>Je réponds généralement dans la journée.</p>
+                        <h3 data-i18n="resa.contact.h3">Une question ? Contactez-moi</h3>
+                        <p data-i18n="resa.contact.p">Je réponds généralement dans la journée.</p>
                         <a href="https://wa.me/33648412365" target="_blank" rel="noopener" class="btn btn-whatsapp btn-full">
-                            <i class="fab fa-whatsapp"></i> Écrire sur WhatsApp
+                            <i class="fab fa-whatsapp"></i> <span data-i18n="resa.whatsapp">Écrire sur WhatsApp</span>
                         </a>
-                        <div class="contact-divider"><span>ou par message</span></div>
+                        <div class="contact-divider"><span data-i18n="resa.or">ou par message</span></div>
                         <form class="contact-form" id="contactForm" novalidate>
                             <div class="form-group">
-                                <input type="text" name="nom" placeholder="Votre nom" required autocomplete="name">
+                                <input type="text" name="nom" data-i18n="form.nom" placeholder="Votre nom" required autocomplete="name">
                             </div>
                             <div class="form-group">
-                                <input type="email" name="email" placeholder="Votre e-mail" required autocomplete="email">
+                                <input type="email" name="email" data-i18n="form.email" placeholder="Votre e-mail" required autocomplete="email">
                             </div>
                             <div class="form-group">
-                                <input type="tel" name="telephone" placeholder="Téléphone (optionnel)" autocomplete="tel">
+                                <input type="tel" name="telephone" data-i18n="form.tel" placeholder="Téléphone (optionnel)" autocomplete="tel">
                             </div>
                             <div class="form-group">
-                                <textarea name="message" placeholder="Votre message, vos dates souhaitées…" rows="4" required></textarea>
+                                <textarea name="message" data-i18n="form.message" placeholder="Votre message, vos dates souhaitées…" rows="4" required></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary btn-full">
-                                <i class="fas fa-paper-plane"></i> Envoyer le message
+                                <i class="fas fa-paper-plane"></i> <span data-i18n="form.submit">Envoyer le message</span>
                             </button>
                             <div class="form-success" id="formSuccess" hidden>
-                                <i class="fas fa-circle-check"></i> Message envoyé — à très bientôt !
+                                <i class="fas fa-circle-check"></i> <span data-i18n="form.success">Message envoyé — à très bientôt !</span>
                             </div>
                         </form>
                     </div>
@@ -630,42 +656,42 @@
         </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════
+    <!-- ═════════════════════════════════════════════
          ACCÈS
-    ═══════════════════════════════════════════ -->
+    ═════════════════════════════════════════════ -->
     <section class="acces">
         <div class="container">
             <div class="acces-grid">
                 <div class="acces-text reveal">
-                    <span class="section-label">Comment venir</span>
-                    <h2>Accès &amp; localisation</h2>
-                    <p>Rue des Rois, Courchevel 1550 — directement face aux pistes. Facilement accessible en voiture, en train ou en avion depuis les grandes villes françaises et européennes.</p>
+                    <span class="section-label" data-i18n="section.acces">Comment venir</span>
+                    <h2 data-i18n="acces.h2">Accès &amp; localisation</h2>
+                    <p data-i18n="acces.p">Rue des Rois, Courchevel 1550 — directement face aux pistes. Facilement accessible en voiture, en train ou en avion depuis les grandes villes françaises et européennes.</p>
                     <div class="acces-list">
                         <div class="acces-item">
                             <i class="fas fa-car"></i>
                             <div>
-                                <strong>En voiture</strong>
-                                <p>A43 direction Moutiers, puis D915 vers Courchevel. Parking gratuit inclus. Lyon : 2h · Genève : 2h · Paris : 6h</p>
+                                <strong data-i18n="acces.car.title">En voiture</strong>
+                                <p data-i18n="acces.car.desc">A43 direction Moutiers, puis D915 vers Courchevel. Parking gratuit inclus. Lyon : 2h · Genève : 2h · Paris : 6h</p>
                             </div>
                         </div>
                         <div class="acces-item">
                             <i class="fas fa-train"></i>
                             <div>
-                                <strong>En train</strong>
-                                <p>Gare de Moûtiers-Salins (TGV depuis Paris en 3h30), puis navette ou taxi vers Courchevel (30 min)</p>
+                                <strong data-i18n="acces.train.title">En train</strong>
+                                <p data-i18n="acces.train.desc">Gare de Moûtiers-Salins (TGV depuis Paris en 3h30), puis navette ou taxi vers Courchevel (30 min)</p>
                             </div>
                         </div>
                         <div class="acces-item">
                             <i class="fas fa-plane"></i>
                             <div>
-                                <strong>En avion</strong>
-                                <p>Chambéry (80 km) · Grenoble (120 km) · Genève (150 km) · Lyon (200 km). Transferts privés disponibles. L'altiport de Courchevel accueille également les vols privés.</p>
+                                <strong data-i18n="acces.plane.title">En avion</strong>
+                                <p data-i18n="acces.plane.desc">Chambéry (80 km) · Grenoble (120 km) · Genève (150 km) · Lyon (200 km). Transferts privés disponibles. L'altiport de Courchevel accueille également les vols privés.</p>
                             </div>
                         </div>
                     </div>
                     <p class="acces-note">
                         <i class="fas fa-circle-info"></i>
-                        L'adresse complète et les codes d'accès vous sont transmis après confirmation de la réservation.
+                        <span data-i18n="acces.note">L'adresse complète et les codes d'accès vous sont transmis après confirmation de la réservation.</span>
                     </p>
                 </div>
                 <div class="acces-map reveal">
@@ -684,22 +710,22 @@
                     <a href="https://maps.google.com/maps?q=422+rue+des+Rois+Courchevel+1550+73120"
                        target="_blank" rel="noopener"
                        class="map-link">
-                        <i class="fas fa-location-dot"></i> Ouvrir dans Google Maps
+                        <i class="fas fa-location-dot"></i> <span data-i18n="acces.maps">Ouvrir dans Google Maps</span>
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════
+    <!-- ═════════════════════════════════════════════
          WEBCAM
-    ═══════════════════════════════════════════ -->
+    ═════════════════════════════════════════════ -->
     <section class="webcam">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-label">En direct</span>
-                <h2>Webcam de Courchevel</h2>
-                <p>Les conditions en temps réel, depuis les pistes de Courchevel.</p>
+                <span class="section-label" data-i18n="section.webcam">En direct</span>
+                <h2 data-i18n="webcam.h2">Webcam de Courchevel</h2>
+                <p data-i18n="webcam.sub">Les conditions en temps réel, depuis les pistes de Courchevel.</p>
             </div>
             <div class="webcam-wrapper reveal">
                 <iframe
@@ -712,24 +738,24 @@
                 </iframe>
                 <div class="webcam-fallback">
                     <i class="fas fa-video"></i>
-                    <p>La webcam n'est pas disponible dans cet aperçu.</p>
+                    <p data-i18n="webcam.fallback">La webcam n'est pas disponible dans cet aperçu.</p>
                     <a href="https://www.courchevel-hotel-flocons.com/webcam/" target="_blank" rel="noopener" class="btn btn-outline">
-                        Voir la webcam en direct <i class="fas fa-external-link-alt"></i>
+                        <span data-i18n="webcam.link">Voir la webcam en direct</span> <i class="fas fa-external-link-alt"></i>
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════
+    <!-- ═════════════════════════════════════════════
          FOOTER
-    ═══════════════════════════════════════════ -->
+    ═════════════════════════════════════════════ -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
                     <h3>Le Planté de Bâton</h3>
-                    <p>Ski in · Ski out à Courchevel, au cœur des 3 Vallées. Restaurants et commerces à 2 minutes.</p>
+                    <p data-i18n="footer.brand.p">Ski in · Ski out à Courchevel, au cœur des 3 Vallées. Restaurants et commerces à 2 minutes.</p>
                     <div class="footer-social">
                         <a href="https://www.airbnb.fr/rooms/1260906762212370216"
                            target="_blank" rel="noopener" aria-label="Page Airbnb">
@@ -742,33 +768,34 @@
                     </div>
                 </div>
                 <div class="footer-links">
-                    <h4>Navigation</h4>
+                    <h4 data-i18n="footer.nav">Navigation</h4>
                     <ul>
-                        <li><a href="#logement">Le logement</a></li>
-                        <li><a href="#galerie">Photos</a></li>
-                        <li><a href="#equipements">Équipements</a></li>
-                        <li><a href="#activites">Activités</a></li>
-                        <li><a href="#reservation">Réserver</a></li>
+                        <li><a href="#logement" data-i18n="nav.logement">Le logement</a></li>
+                        <li><a href="#galerie" data-i18n="nav.galerie">Photos</a></li>
+                        <li><a href="#equipements" data-i18n="nav.equipements">Équipements</a></li>
+                        <li><a href="#activites" data-i18n="nav.activites">Activités</a></li>
+                        <li><a href="#reservation" data-i18n="nav.reserver">Réserver</a></li>
                     </ul>
                 </div>
                 <div class="footer-info">
-                    <h4>Informations</h4>
+                    <h4 data-i18n="footer.info">Informations</h4>
                     <ul>
-                        <li><i class="fas fa-location-dot"></i> Courchevel 1550, Savoie (73)</li>
-                        <li><i class="fas fa-users"></i> Jusqu'à 6 personnes</li>
-                        <li><i class="fas fa-calendar-days"></i> Disponible toute l'année</li>
+                        <li><i class="fas fa-location-dot"></i> <span data-i18n="footer.loc">Courchevel 1550, Savoie (73)</span></li>
+                        <li><i class="fas fa-users"></i> <span data-i18n="footer.guests">Jusqu'à 6 personnes</span></li>
+                        <li><i class="fas fa-calendar-days"></i> <span data-i18n="footer.avail">Disponible toute l'année</span></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Le Planté de Bâton — Tous droits réservés</p>
+                <p data-i18n="footer.copy">&copy; 2025 Le Planté de Bâton — Tous droits réservés</p>
                 <a href="https://www.airbnb.fr/rooms/1260906762212370216" target="_blank" rel="noopener">
-                    <i class="fab fa-airbnb"></i> Réserver sur Airbnb
+                    <i class="fab fa-airbnb"></i> <span data-i18n="footer.airbnb">Réserver sur Airbnb</span>
                 </a>
             </div>
         </div>
     </footer>
 
+    <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
