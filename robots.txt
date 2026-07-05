@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://postiche.github.io/LePlanteDeBaton/sitemap.xml
