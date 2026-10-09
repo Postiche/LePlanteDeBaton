@@ -1,0 +1,15 @@
+# Secrets et données : ne jamais versionner
+backend/.env
+backend/data/
+*.db
+*.sqlite
+backups/
+# Environnements et builds
+.venv/
+backend/.venv/
+outlook-agent/.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+frontend/node_modules/
+frontend/dist/

@@ -1,0 +1,12 @@
+# HTTPS automatique (Let's Encrypt) pour le domaine défini dans DOMAIN
+{$DOMAIN} {
+	encode zstd gzip
+	request_body {
+		max_size 30MB
+	}
+	header {
+		-Server
+		X-Robots-Tag "noindex, nofollow"
+	}
+	reverse_proxy app:8000
+}
