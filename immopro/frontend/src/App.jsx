@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Navigate, NavLink, Route, Routes, useLocation, useNavigate } from 'react-router-dom'
+import { PREVIEW } from './api.js'
 import { useAuth } from './auth.jsx'
 import Icon from './components/Icon.jsx'
 import Login from './pages/Login.jsx'
@@ -71,6 +72,7 @@ function Layout({ children }) {
           <NavLink className="btn btn-accent btn-sm hide-sm" to="/offres/nouvelle"><Icon name="plus" />Offre</NavLink>
           <NavLink className="btn btn-sm hide-sm" to="/demandes/nouvelle"><Icon name="plus" />Demande</NavLink>
         </header>
+        {PREVIEW && <div className="demo-banner">Aperçu de démonstration — données fictives, enregistrements et téléchargements désactivés.</div>}
         {user.must_change_password && loc.pathname !== '/compte' && (
           <div className="demo-banner" style={{ background: '#fff1eb', color: '#8a2d07' }}>Mot de passe temporaire : <NavLink to="/compte">changez-le maintenant</NavLink>.</div>
         )}

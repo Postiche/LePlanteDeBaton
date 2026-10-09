@@ -1,10 +1,11 @@
 import { useState } from 'react'
+import { PREVIEW } from '../api.js'
 import { useAuth } from '../auth.jsx'
 
 export default function Login() {
   const { login } = useAuth()
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
+  const [username, setUsername] = useState(PREVIEW ? 'demo' : '')
+  const [password, setPassword] = useState(PREVIEW ? 'apercu-demo' : '')
   const [error, setError] = useState('')
   const [busy, setBusy] = useState(false)
   const submit = async (e) => {
@@ -28,6 +29,7 @@ export default function Login() {
         <form onSubmit={submit}>
           <h2 style={{ fontSize: 22 }}>Connexion</h2>
           <p className="muted" style={{ margin: 0 }}>Identifiez-vous pour accéder à votre espace.</p>
+          {PREVIEW && <div className="alert info small">Aperçu de démonstration : identifiants préremplis, cliquez sur « Se connecter ».</div>}
           {error && <div className="alert danger" role="alert">{error}</div>}
           <label className="field">Identifiant<input type="text" autoComplete="username" autoCapitalize="none" value={username} onChange={(e) => setUsername(e.target.value)} required autoFocus /></label>
           <label className="field">Mot de passe<input type="password" autoComplete="current-password" value={password} onChange={(e) => setPassword(e.target.value)} required /></label>

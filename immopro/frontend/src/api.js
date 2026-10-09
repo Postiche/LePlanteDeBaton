@@ -1,3 +1,7 @@
+import { mockApi, PREVIEW_READ_ONLY } from './preview/mockApi.js'
+
+export const PREVIEW = import.meta.env.VITE_PREVIEW === '1'
+
 // Client API : cookies de session HttpOnly (same-origin) + en-tête CSRF sur les écritures.
 let csrfToken = null
 export function setCsrf(token) { csrfToken = token }
@@ -17,6 +21,12 @@ export class ApiError extends Error {
 }
 
 export async function api(path, { method = 'GET', body, params, raw = false, form } = {}) {
+  if (PREVIEW) {
+    try { return await mockApi(path, { method, body, params }) } catch (e) {
+      if (e.status === 401 && !path.startsWith('/api/auth/')) window.dispatchEvent(new CustomEvent('immopro:unauthorized'))
+      throw new ApiError(e.status, e.message)
+    }
+  }
   let url = path
   if (params) {
     const qs = new URLSearchParams()
@@ -49,6 +59,7 @@ export async function api(path, { method = 'GET', body, params, raw = false, for
 }
 
 export async function download(path, { method = 'GET', body, filename } = {}) {
+  if (PREVIEW) throw new ApiError(403, "Aperçu : les téléchargements (PDF, Excel, .eml) nécessitent le serveur ImmoPro.")
   const res = await api(path, { method, body, raw: true })
   const blob = await res.blob()
   const cd = res.headers.get('content-disposition') || ''
