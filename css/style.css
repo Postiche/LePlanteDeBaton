@@ -580,6 +580,7 @@ section    { padding: 6rem 0; }
   width: 100%;
   aspect-ratio: 4/3;
   object-fit: cover;
+  object-position: center 30%;
   transition: transform .6s ease;
 }
 .logement-image:hover img { transform: scale(1.03); }
